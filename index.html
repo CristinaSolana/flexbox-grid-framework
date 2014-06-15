@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flexbox Grid Framework</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/example-styles.css">
+
+</head>
+
+<body>
+
+    <div class="example-content">
+
+        <div class="example-grid-wrapper">
+            <h1>Basic Grids</h1>
+            <ul>
+                <li>Mixin: <code>@include column-&lt;# of columns&gt;</code>
+                <li>Class: <code>.column-&lt;# of columns&gt;-&lt;viewport size&gt;</code>
+            </ul>
+            <div class="grid-row">
+                <div class="column-1-sm">
+                    <p>.column-1-sm</p>
+                </div>
+                <div class="column-11-sm">
+                    <p>.column-11-sm</p>
+                </div>
+            </div>
+
+            <div class="grid-row">
+                <div class="column-2-sm">
+                    <p>.column-2-sm</p>
+                </div>
+                <div class="column-10-sm">
+                    <p>.column-10-sm</p>
+                </div>
+            </div>
+
+            <div class="grid-row">
+                <div class="column-3-sm">
+                    <p>.column-3-sm</p>
+                </div>
+                <div class="column-9-sm">
+                    <p>.column-9-sm</p>
+                </div>
+            </div>
+
+            <div class="grid-row">
+                <div class="column-4-sm">
+                    <p>.column-4-sm</p>
+                </div>
+                <div class="column-8-sm">
+                    <p>.column-8-sm</p>
+                </div>
+            </div>
+
+            <div class="grid-row">
+                <div class="column-5-sm">
+                    <p>.column-5-sm</p>
+                </div>
+                <div class="column-7-sm">
+                    <p>.column-7-sm</p>
+                </div>
+            </div>
+
+            <div class="grid-row">
+                <div class="column-6-sm">
+                    <p>.column-6-sm</p>
+                </div>
+                <div class="column-6-sm">
+                    <p>.column-6-sm</p>
+                </div>
+            </div>
+
+            <div class="grid-row">
+                <div class="column-even-sm">
+                    <p>.column-even-sm</p>
+                </div>
+                <div class="column-even-sm">
+                    <p>.column-even-sm</p>
+                </div>
+            </div>
+
+            <div class="grid-row">
+                <div class="column-even-sm">
+                    <p>.column-even-sm</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="example-grid-wrapper">
+            <h1>Nested Grid + Grid Padding</h1>
+            <ul>
+                <li>Mixin: <code>@include grid-padding</code>
+                <li>Class: <code>.grid-padding</code>
+            </ul>
+            <div class="grid-row">
+                <div class="column-6-sm">
+                    <div class="grid-row grid-padding">
+                        <div class="column-4-sm">
+                            <p>.column-4-sm</p>
+                        </div>
+                        <div class="column-4-sm">
+                            <p>.column-4-sm</p>
+                        </div>
+                        <div class="column-4-sm">
+                            <p>.column-4-sm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column-6-sm">
+                    <div class="grid-row grid-padding">
+                        <div class="column-6-sm">
+                            <p>.column-6-sm</p>
+                        </div>
+                        <div class="column-6-sm">
+                            <p>.column-6-sm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="example-grid-wrapper">
+            <h1>Wrapping Grids</h1>
+            <ul>
+                <li>Mixin: <code>@include grid-wrap</code>
+                <li>Class: <code>.grid-wrap</code>
+            </ul>
+            <div class="grid-row grid-wrap">
+                <div class="column-2-sm"><p>.column-2-sm</p></div>
+                <div class="column-2-sm"><p>.column-2-sm</p></div>
+                <div class="column-2-sm"><p>.column-2-sm</p></div>
+                <div class="column-2-sm"><p>.column-2-sm</p></div>
+                <div class="column-2-sm"><p>.column-2-sm</p></div>
+                <div class="column-2-sm"><p>.column-2-sm</p></div>
+                <div class="column-2-sm"><p>.column-2-sm</p></div>
+                <div class="column-2-sm"><p>.column-2-sm</p></div>
+                <div class="column-2-sm"><p>.column-2-sm</p></div>
+                <div class="column-2-sm"><p>.column-2-sm</p></div>
+                <div class="column-2-sm"><p>.column-2-sm</p></div>
+                <div class="column-2-sm"><p>.column-2-sm</p></div>
+            </div>
+        </div>
+
+        <div class="example-grid-wrapper">
+            <h1>Rearranging Item Order</h1>
+            <ul>
+                <li>Mixin: <code>@include order-sm-first</code>
+                <li>Class: <code>.order-sm-first</code>
+            </ul>
+            <div class="grid-row">
+                <div class="column-9-sm">
+                    <p>.column-9-sm</p>
+                </div>
+                <div class="column-3-sm order-lg-first">
+                    <p>.column-9-sm .order-lg-first</p>
+                </div>
+            </div>
+            <ul>
+                <li>Mixin: <code>@include order-sm-last</code>
+                <li>Class: <code>.order-sm-last</code>
+            </ul>
+            <div class="grid-row">
+                <div class="column-9-sm order-sm-last">
+                    <p>.column-9-sm .order-sm-last</p>
+                </div>
+                <div class="column-3-sm order-lg-last">
+                    <p>.column-9-sm .order-lg-last</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="example-grid-wrapper">
+            <h1>Reversing Order</h1>
+
+            <h2>Horizontal</h2>
+            <ul>
+                <li>Mixin: <code>@include row-reverse</code>
+                <li>Class: <code>.row-reverse</code>
+            </ul>
+            <div class="grid-row row-reverse">
+                <div class="column-4-sm">
+                    <h2>1</h2>
+                    <p>.column-4-sm</p>
+                </div>
+                <div class="column-4-sm">
+                    <h2>2</h2>
+                    <p>.column-4-sm</p>
+                </div>
+                <div class="column-4-sm">
+                    <h2>3</h2>
+                    <p>.column-4-sm</p>
+                </div>
+            </div>
+
+            <h2>Vertical</h2>
+            <ul>
+                <li>Mixin: <code>@include column-reverse</code>
+                <li>Class: <code>.column-reverse</code>
+            </ul>
+            <div class="grid-column column-reverse">
+                <div class="column-even-sm">
+                    <h2>1</h2>
+                    <p>.column-even-sm</p>
+                </div>
+                <div class="column-even-sm">
+                    <h2>2</h2>
+                    <p>.column-even-sm</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="example-grid-wrapper">
+            <h1>Vertical Item Alignment</h1>
+
+            <h2>Align columns to 'top'</h2>
+            <ul>
+                <li>Mixin: <code>@include align($type)</code>
+                <li>Class: <code>.&lt;viewport size&gt;-align-flex-start</code>
+            </ul>
+            <div class="grid-row sm-align-flex-start">
+                <div class="column-4-sm">
+                    <p>.column-4-sm</p>
+                </div>
+                <div class="column-4-sm">
+                    <p>...</p>
+                    <p>.column-4-sm</p>
+                </div>
+                <div class="column-4-sm">
+                    <p>...</p>
+                    <p>.column-4-sm</p>
+                    <p>...</p>
+                </div>
+            </div>
+
+            <h2>Align columns to center</h2>
+            <ul>
+                <li>Mixin: <code>@include align($type)</code>
+                <li>Class: <code>.&lt;viewport size&gt;-align-center</code>
+            </ul>
+            <div class="grid-row sm-align-center">
+                <div class="column-4-sm">
+                    <p>.column-4-sm</p>
+                </div>
+                <div class="column-4-sm">
+                    <p>...</p>
+                    <p>.column-4-sm</p>
+                </div>
+                <div class="column-4-sm">
+                    <p>...</p>
+                    <p>.column-4-sm</p>
+                    <p>...</p>
+                </div>
+            </div>
+
+            <h2>Align columns to bottom</h2>
+            <ul>
+                <li>Mixin: <code>@include align($type)</code>
+                <li>Class: <code>.&lt;viewport size&gt;-align-flex-end</code>
+            </ul>
+            <div class="grid-row sm-align-flex-end">
+                <div class="column-4-sm">
+                    <p>.column-4-sm</p>
+                </div>
+                <div class="column-4-sm">
+                    <p>...</p>
+                    <p>.column-4-sm</p>
+                </div>
+                <div class="column-4-sm">
+                    <p>...</p>
+                    <p>.column-4-sm</p>
+                    <p>...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="example-grid-wrapper">
+            <h1>Horizontal Alignment</h1>
+
+            <h2>Align columns to start</h2>
+            <ul>
+                <li>Mixin: <code>@include justify($type)</code>
+                <li>Class: <code>.&lt;viewport size&gt;-justify-flex-start</code>
+            </ul>
+            <div class="grid-row">
+                <div class="column-4-sm sm-justify-flex-start">
+                    <p>.column-4-sm</p>
+                </div>
+            </div>
+
+            <h2>Align columns to center</h2>
+            <ul>
+                <li>Mixin: <code>@include justify($type)</code>
+                <li>Class: <code>.&lt;viewport size&gt;-justify-center</code>
+            </ul>
+            <div class="grid-row sm-justify-center">
+                <div class="column-4-sm">
+                    <p>.column-4-sm</p>
+                </div>
+            </div>
+
+            <h2>Align columns to end</h2>
+            <ul>
+                <li>Mixin: <code>@include justify($type)</code>
+                <li>Class: <code>.&lt;viewport size&gt;-justify-flex-end</code>
+            </ul>
+            <div class="grid-row sm-justify-flex-end">
+                <div class="column-4-sm">
+                    <p>.column-4-sm</p>
+                </div>
+            </div>
+
+            <h2>Add equal gutter around columns</h2>
+            <ul>
+                <li>Mixin: <code>@include justify($type)</code>
+                <li>Class: <code>.&lt;viewport size&gt;-justify-space-around</code>
+            </ul>
+            <div class="grid-row sm-justify-space-around">
+                <div class="column-4-sm">
+                    <p>.column-4-sm</p>
+                </div>
+                <div class="column-4-sm">
+                    <p>.column-4-sm</p>
+                </div>
+                <div class="column-4-sm">
+                    <p>.column-4-sm</p>
+                </div>
+            </div>
+
+            <h2>Add equal gutter between columns</h2>
+            <ul>
+                <li>Mixin: <code>@include justify($type)</code>
+                <li>Class: <code>.&lt;viewport size&gt;-justify-space-between</code>
+            </ul>
+            <div class="grid-row sm-justify-space-between">
+                <div class="column-4-sm">
+                    <p>.column-4-sm</p>
+                </div>
+                <div class="column-4-sm">
+                    <p>.column-4-sm</p>
+                </div>
+                <div class="column-4-sm">
+                    <p>.column-4-sm</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="example-grid-wrapper">
+            <h1>Offsets</h1>
+            <ul>
+                <li>Mixin: <code>@include offset-&lt;# of columns&gt;</code>
+                <li>Class: <code>.offset-&lt;# of columns&gt;-&lt;viewport size&gt;</code>
+            </ul>
+            <div class="grid-row">
+                <div class="column-1-sm"><p>.column-1-sm</p></div>
+            </div>
+            <div class="grid-row">
+                <div class="column-1-sm offset-1-sm"><p>.offset-1-sm</p></div>
+            </div>
+            <div class="grid-row">
+                <div class="column-1-sm offset-2-sm"><p>.offset-2-sm</p></div>
+            </div>
+            <div class="grid-row">
+                <div class="column-1-sm offset-3-sm"><p>.offset-3-sm</p></div>
+            </div>
+            <div class="grid-row">
+                <div class="column-1-sm offset-4-sm"><p>.offset-4-sm</p></div>
+            </div>
+            <div class="grid-row">
+                <div class="column-1-sm offset-5-sm"><p>.offset-5-sm</p></div>
+            </div>
+            <div class="grid-row">
+                <div class="column-1-sm offset-6-sm"><p>.offset-6-sm</p></div>
+            </div>
+            <div class="grid-row">
+                <div class="column-1-sm offset-7-sm"><p>.offset-7-sm</p></div>
+            </div>
+            <div class="grid-row">
+                <div class="column-1-sm offset-8-sm"><p>.offset-8-sm</p></div>
+            </div>
+            <div class="grid-row">
+                <div class="column-1-sm offset-9-sm"><p>.offset-9-sm</p></div>
+            </div>
+            <div class="grid-row">
+                <div class="column-1-sm offset-10-sm"><p>.offset-10-sm</p></div>
+            </div>
+            <div class="grid-row">
+                <div class="column-1-sm offset-11-sm"><p>.offset-11-sm</p></div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        This is the sticky footer. http://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer
+    </footer>
+</body>
+
+</html>

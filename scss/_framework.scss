@@ -1,0 +1,329 @@
+@import "compass";
+@import "mixins-flexbox";
+
+///////////////////////
+// Variables
+///////////////////////
+$render-classes: false !default;
+
+// Used to calculate viewport min-width for Media Queries
+$base-font-size: 16px;
+
+// Calculate viewport min-width for Media Queries
+
+$width-sm: 480px !default;
+$width-md: 768px !default;
+$width-lg: 1024px !default;
+$width-xl: 1280px !default;
+
+$viewport-sm: $width-sm / $base-font-size !default;
+$viewport-md: $width-md / $base-font-size !default;
+$viewport-lg: $width-lg / $base-font-size !default;
+$viewport-xl: $width-xl / $base-font-size !default;
+
+// Grid Config
+$grid-columns : 12 !default; // Number of columns in grid
+$grid-width : 100% !default; // Percentage of container width
+$grid-margin : 16px !default; // Grid cell margin. Must have unit even if 0 or calc() poops.
+$grid-padding : 1rem !default;
+
+// Lists
+$justify: flex-start center flex-end space-around space-between;
+$align: flex-start center flex-end;
+
+
+///////////////////////
+// Mixin Extensions
+///////////////////////
+@mixin all-columns-offsets {
+    @include display-flex();
+    @include flex-direction(column);
+    @include flex-grow(0);
+    @include flex-shrink(0);
+    margin-left: $grid-margin;
+}
+
+@mixin grid-row {
+    margin-left: -$grid-margin;
+    @include display-flex();
+    @include flex-direction(row);
+}
+@mixin grid-column {
+    margin-left: -$grid-margin;
+    @include display-flex();
+    @include flex-direction(column);
+}
+@mixin grid-wrap {
+    @include flex-wrap(wrap);
+}
+@mixin grid-padding {
+    padding: $grid-padding;
+}
+
+@mixin row-reverse {
+    @include flex-direction(row-reverse);
+    @include flex-wrap(row-reverse);
+}
+@mixin column-reverse {
+    @include flex-direction(column-reverse);
+    @include flex-wrap(column-reverse);
+}
+
+@mixin column-even {
+    @include flex-grow(1);
+    @include flex-basis(0%);
+    @include flex(1);
+}
+
+@mixin justify($type) {
+    @include justify-content($type);
+}
+
+@mixin align($type) {
+    @include align-items($type);
+}
+
+@mixin order-first {
+    @include order(-1);
+}
+@mixin order-last {
+    @include order(1);
+}
+
+@mixin column-span($column-span) {
+    $total-col-width    : ($grid-width / $grid-columns) * $column-span;
+    $col-width          : calc(#{$total-col-width} - #{$grid-margin});
+
+    -ms-flex: $column-span;
+    //-ms-flex-preferred-size: $col-width; // calc() doesn't work here. Boo IE. :(
+    @include flex-basis($col-width);
+
+    @if $render-classes == false {
+        @include all-columns-offsets;
+    }
+}
+
+@mixin offset-span($offset-span) {
+    $total-col-width    : ($grid-width / $grid-columns) * $offset-span;
+    $col-width          : calc(#{$total-col-width} + (#{$grid-margin}));
+
+    margin-left: $col-width;
+
+    @if $render-classes == false {
+        @include all-columns-offsets;
+    }
+}
+
+* {
+    @include box-sizing(border-box);
+}
+
+// for Sticky Footer
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+@if( $render-classes ) {
+    .grid-row {
+        margin-left: -$grid-margin;
+        @include display-flex();
+        @include flex-direction(row);
+    }
+    .grid-column {
+        margin-left: -$grid-margin;
+        @include display-flex();
+        @include flex-direction(column);
+    }
+    .grid-wrap {
+        @include flex-wrap(wrap);
+    }
+    .grid-padding {
+        padding: $grid-padding;
+    }
+
+    .row-reverse {
+        @include flex-direction(row-reverse);
+        @include flex-wrap(row-reverse);
+    }
+    .column-reverse {
+        @include flex-direction(column-reverse);
+        @include flex-wrap(column-reverse);
+    }
+
+    [class^="column"],
+    [class^="offset"] {
+        @include display-flex();
+        @include flex-direction(column);
+        @include flex-grow(0);
+        @include flex-shrink(0);
+        margin-left: $grid-margin;
+    }
+
+    .column-even-sm,
+    .column-even-md,
+    .column-even-lg,
+    .column-even-xl {
+        @include flex-grow(1);
+        @include flex-basis(0%);
+    }
+
+    ////////////////////////
+    // Small
+    ////////////////////////
+
+    @for $i from 1 through $grid-columns - 1 {
+        .column-#{$i}-sm {
+            @include column-span($i);
+        }
+    }
+    @for $i from 1 through $grid-columns - 1 {
+        .offset-#{$i}-sm {
+            @include offset-span($i);
+        }
+    }
+
+    @each $type in $justify {
+        .sm-justify-#{$type} {
+            @include justify-content($type);
+        }
+    }
+    @each $type in $align {
+        .sm-align-#{$type} {
+            @include align-items($type);
+        }
+    }
+
+    .column-even-sm {
+        @include flex(1);
+    }
+    .order-sm-first {
+        @include order(-1);
+    }
+    .order-sm-last {
+        @include order(1);
+    }
+
+
+    ////////////////////////
+    // Medium
+    ////////////////////////
+
+    @media only screen and (min-width: $viewport-md + em) {
+
+        @for $i from 1 through $grid-columns - 1 {
+            .column-#{$i}-md {
+                @include column-span($i);
+            }
+        }
+        @for $i from 1 through $grid-columns - 1 {
+            .offset-#{$i}-md {
+                @include offset-span($i);
+            }
+        }
+
+        @each $type in $justify {
+            .md-justify-#{$type} {
+                @include justify-content($type);
+            }
+        }
+        @each $type in $align {
+            .md-align-#{$type} {
+                @include align-items($type);
+            }
+        }
+
+        .column-even-md {
+            @include flex(1);
+        }
+        .order-md-first {
+            @include order(-1);
+        }
+        .order-md-last {
+            @include order(1);
+        }
+
+    }
+
+    ////////////////////////
+    // Large
+    ////////////////////////
+
+    @media only screen and (min-width: $viewport-lg + em) {
+
+        @for $i from 1 through $grid-columns - 1 {
+            .column-#{$i}-lg {
+                @include column-span($i);
+            }
+        }
+        @for $i from 1 through $grid-columns - 1 {
+            .offset-#{$i}-lg {
+                @include offset-span($i);
+            }
+        }
+
+        @each $type in $justify {
+            .lg-justify-#{$type} {
+                @include justify-content($type);
+            }
+        }
+        @each $type in $align {
+            .lg-align-#{$type} {
+                @include align-items($type);
+            }
+        }
+
+        .column-even-lg {
+            @include flex(1);
+        }
+        .order-lg-first {
+            @include order(-1);
+        }
+        .order-lg-last {
+            @include order(1);
+        }
+
+    }
+
+    ////////////////////////
+    // X-Large
+    ////////////////////////
+    @media only screen and (min-width: $viewport-xl + em) {
+
+        @for $i from 1 through $grid-columns {
+            .column-#{$i}-xl {
+                @include column-span($i);
+            }
+        }
+        @for $i from 1 through $grid-columns - 1 {
+            .offset-#{$i}-xl {
+                @include offset-span($i);
+            }
+        }
+
+        @each $type in $justify {
+            .xl-justify-#{$type} {
+                @include justify-content($type);
+            }
+        }
+        @each $type in $align {
+            .xl-align-#{$type} {
+                @include align-items($type);
+            }
+        }
+
+        .column-even-xl {
+            @include flex(1);
+        }
+        .order-xl-first {
+            @include order(-1);
+        }
+        .order-xl-last {
+            @include order(1);
+        }
+
+    }
+}

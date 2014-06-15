@@ -1,0 +1,56 @@
+body {
+  font-family: "Droid Serif", "Helvetica Neue", sans-serif;
+  color: #333; }
+
+header, footer, main, section, aside {
+  display: block; }
+
+h1 {
+  font-size: 1.5em;
+  margin: 0 0 1em;
+  color: #f06; }
+
+h2 {
+  font-size: 1.125em;
+  margin: 2em 0 1em;
+  color: #666; }
+
+li {
+  font-family: sans-serif; }
+  li code {
+    font-size: 1.25em;
+    color: black; }
+
+.example-content,
+footer {
+  width: 100%;
+  max-width: 64em;
+  margin: 0 auto; }
+
+.example-content {
+  flex: 1; }
+
+.example-grid-wrapper {
+  margin-bottom: 2em;
+  padding: 1em;
+  background-color: #eee; }
+
+footer {
+  padding: 1em;
+  background-color: black; }
+
+[class^="column"],
+[class^="offset"] {
+  background-color: #ddd;
+  border: 3px solid #ccc;
+  text-align: center;
+  font-family: monospace;
+  word-wrap: break-word;
+  /* Oh Firefox */ }
+
+[class^="grid"],
+[class^="grid"] + [class^="grid"] {
+  margin-bottom: 1rem; }
+
+[class^="grid"] [class^="grid"] {
+  margin-bottom: 0; }
