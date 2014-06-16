@@ -5,6 +5,7 @@
 // Variables
 ///////////////////////
 $render-classes: false !default;
+$wrap-grid-items: true !default;
 
 // Used to calculate viewport min-width for Media Queries
 $base-font-size: 16px;
@@ -47,11 +48,17 @@ $align: flex-start center flex-end;
     margin-left: -$grid-margin;
     @include display-flex();
     @include flex-direction(row);
+    @if( $wrap-grid-items ) {
+        @include flex-wrap(wrap);
+    }
 }
 @mixin grid-column {
     margin-left: -$grid-margin;
     @include display-flex();
     @include flex-direction(column);
+    @if( $wrap-grid-items ) {
+        @include flex-wrap(wrap);
+    }
 }
 @mixin grid-wrap {
     @include flex-wrap(wrap);
@@ -132,14 +139,22 @@ body {
         margin-left: -$grid-margin;
         @include display-flex();
         @include flex-direction(row);
+        @if( $wrap-grid-items ) {
+            @include flex-wrap(wrap);
+        }
     }
     .grid-column {
         margin-left: -$grid-margin;
         @include display-flex();
         @include flex-direction(column);
+        @if( $wrap-grid-items ) {
+            @include flex-wrap(wrap);
+        }
     }
-    .grid-wrap {
-        @include flex-wrap(wrap);
+    @if( $wrap-grid-items == false ) {
+        .grid-wrap {
+            @include flex-wrap(wrap);
+        }
     }
     .grid-padding {
         padding: $grid-padding;
