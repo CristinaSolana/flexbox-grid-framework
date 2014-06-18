@@ -171,10 +171,10 @@ body {
 
     [class^="column"],
     [class^="offset"] {
-        @include display-flex();
-        @include flex-direction(column);
-        @include flex-grow(0);
-        @include flex-shrink(0);
+        // @include display-flex();
+        // @include flex-direction(column);
+        // @include flex-grow(0);
+        // @include flex-shrink(0);
         margin-left: $grid-margin;
     }
 
