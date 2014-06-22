@@ -202,12 +202,12 @@ body {
     }
 
     @each $type in $justify {
-        .sm-justify-#{$type} {
+        .justify-#{$type}-sm {
             @include justify-content($type);
         }
     }
     @each $type in $align {
-        .sm-align-#{$type} {
+        .align-#{$type}-sm {
             @include align-items($type);
         }
     }
@@ -215,10 +215,10 @@ body {
     .column-auto-sm {
         @include flex(1);
     }
-    .order-sm-first {
+    .order-first-sm {
         @include order(-1);
     }
-    .order-sm-last {
+    .order-last-sm {
         @include order(1);
     }
 
@@ -241,12 +241,12 @@ body {
         }
 
         @each $type in $justify {
-            .md-justify-#{$type} {
+            .justify-#{$type}-md {
                 @include justify-content($type);
             }
         }
         @each $type in $align {
-            .md-align-#{$type} {
+            .align-#{$type}-md {
                 @include align-items($type);
             }
         }
@@ -254,10 +254,10 @@ body {
         .column-auto-md {
             @include flex(1);
         }
-        .order-md-first {
+        .order-first-md {
             @include order(-1);
         }
-        .order-md-last {
+        .order-last-md {
             @include order(1);
         }
 
@@ -281,12 +281,12 @@ body {
         }
 
         @each $type in $justify {
-            .lg-justify-#{$type} {
+            .justify-#{$type}-lg {
                 @include justify-content($type);
             }
         }
         @each $type in $align {
-            .lg-align-#{$type} {
+            .align-#{$type}-lg {
                 @include align-items($type);
             }
         }
@@ -294,10 +294,10 @@ body {
         .column-auto-lg {
             @include flex(1);
         }
-        .order-lg-first {
+        .order-first-lg {
             @include order(-1);
         }
-        .order-lg-last {
+        .order-last-lg {
             @include order(1);
         }
 
@@ -320,12 +320,12 @@ body {
         }
 
         @each $type in $justify {
-            .xl-justify-#{$type} {
+            .justify-#{$type}-xl {
                 @include justify-content($type);
             }
         }
         @each $type in $align {
-            .xl-align-#{$type} {
+            .align-#{$type}-xl {
                 @include align-items($type);
             }
         }
@@ -333,10 +333,10 @@ body {
         .column-auto-xl {
             @include flex(1);
         }
-        .order-xl-first {
+        .order-first-xl {
             @include order(-1);
         }
-        .order-xl-last {
+        .order-last-xl {
             @include order(1);
         }
 

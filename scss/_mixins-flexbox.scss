@@ -160,7 +160,7 @@ $default-flex-flow: $default-flex-direction $default-flex-wrap !default;
             @include experimental($legacy-property, $legacy-value, $flexbox-legacy-support...);
         }
     } @else if($flexbox-display-warnings) {
-        @debug _support-warning($standard-property, "legacy");
+        //@debug _support-warning($standard-property, "legacy");
     }
 
     // IE 10
@@ -289,7 +289,7 @@ $default-flex-flow: $default-flex-direction $default-flex-wrap !default;
         @else if $value == wrap {
             @if $syntax == legacy {
                 @if($flexbox-display-warnings) {
-                    @debug "\"#{$property}: #{$value}\" is not supported consistently in the \"#{$syntax}\" syntax";
+                    //@debug "\"#{$property}: #{$value}\" is not supported consistently in the \"#{$syntax}\" syntax";
                 }
                 $flexbox-new-value: multiple;
             }
@@ -302,7 +302,7 @@ $default-flex-flow: $default-flex-direction $default-flex-wrap !default;
     }
 
     @if ($flexbox-new-value == null or $flexbox-warning) and $flexbox-display-warnings {
-        @debug if($flexbox-warning, $flexbox-warning, _support-warning("#{$property}: #{$value}", $syntax));
+        //@debug if($flexbox-warning, $flexbox-warning, _support-warning("#{$property}: #{$value}", $syntax));
     }
 
     @return $flexbox-new-value;

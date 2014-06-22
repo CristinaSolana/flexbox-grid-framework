@@ -79,20 +79,6 @@ body {
 
 [class^="column"],
 [class^="offset"] {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
-  -ms-flex-direction: column;
-  -webkit-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex-grow: 0;
-  flex-grow: 0;
-  -webkit-flex-shrink: 0;
-  flex-shrink: 0;
   margin-left: 16px; }
 
 .column-auto-sm,
@@ -197,54 +183,54 @@ body {
 .offset-11-sm {
   margin-left: calc(91.66667% + (16px)); }
 
-.sm-justify-flex-start {
+.justify-flex-start-sm {
   -webkit-box-pack: start;
   -moz-box-pack: start;
   -ms-flex-pack: start;
   -webkit-justify-content: flex-start;
   justify-content: flex-start; }
 
-.sm-justify-center {
+.justify-center-sm {
   -webkit-box-pack: center;
   -moz-box-pack: center;
   -ms-flex-pack: center;
   -webkit-justify-content: center;
   justify-content: center; }
 
-.sm-justify-flex-end {
+.justify-flex-end-sm {
   -webkit-box-pack: end;
   -moz-box-pack: end;
   -ms-flex-pack: end;
   -webkit-justify-content: flex-end;
   justify-content: flex-end; }
 
-.sm-justify-space-around {
+.justify-space-around-sm {
   -ms-flex-pack: distribute;
   -webkit-justify-content: space-around;
   justify-content: space-around; }
 
-.sm-justify-space-between {
+.justify-space-between-sm {
   -webkit-box-pack: justify;
   -moz-box-pack: justify;
   -ms-flex-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between; }
 
-.sm-align-flex-start {
+.align-flex-start-sm {
   -webkit-box-align: start;
   -moz-box-align: start;
   -ms-flex-align: start;
   -webkit-align-items: flex-start;
   align-items: flex-start; }
 
-.sm-align-center {
+.align-center-sm {
   -webkit-box-align: center;
   -moz-box-align: center;
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center; }
 
-.sm-align-flex-end {
+.align-flex-end-sm {
   -webkit-box-align: end;
   -moz-box-align: end;
   -ms-flex-align: end;
@@ -258,12 +244,12 @@ body {
   -webkit-flex: 1;
   flex: 1; }
 
-.order-sm-first {
+.order-first-sm {
   -ms-flex-order: -1;
   -webkit-order: -1;
   order: -1; }
 
-.order-sm-last {
+.order-last-sm {
   -webkit-box-ordinal-group: 1;
   -moz-box-ordinal-group: 1;
   -ms-flex-order: 1;
@@ -364,54 +350,54 @@ body {
   .offset-11-md {
     margin-left: calc(91.66667% + (16px)); }
 
-  .md-justify-flex-start {
+  .justify-flex-start-md {
     -webkit-box-pack: start;
     -moz-box-pack: start;
     -ms-flex-pack: start;
     -webkit-justify-content: flex-start;
     justify-content: flex-start; }
 
-  .md-justify-center {
+  .justify-center-md {
     -webkit-box-pack: center;
     -moz-box-pack: center;
     -ms-flex-pack: center;
     -webkit-justify-content: center;
     justify-content: center; }
 
-  .md-justify-flex-end {
+  .justify-flex-end-md {
     -webkit-box-pack: end;
     -moz-box-pack: end;
     -ms-flex-pack: end;
     -webkit-justify-content: flex-end;
     justify-content: flex-end; }
 
-  .md-justify-space-around {
+  .justify-space-around-md {
     -ms-flex-pack: distribute;
     -webkit-justify-content: space-around;
     justify-content: space-around; }
 
-  .md-justify-space-between {
+  .justify-space-between-md {
     -webkit-box-pack: justify;
     -moz-box-pack: justify;
     -ms-flex-pack: justify;
     -webkit-justify-content: space-between;
     justify-content: space-between; }
 
-  .md-align-flex-start {
+  .align-flex-start-md {
     -webkit-box-align: start;
     -moz-box-align: start;
     -ms-flex-align: start;
     -webkit-align-items: flex-start;
     align-items: flex-start; }
 
-  .md-align-center {
+  .align-center-md {
     -webkit-box-align: center;
     -moz-box-align: center;
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center; }
 
-  .md-align-flex-end {
+  .align-flex-end-md {
     -webkit-box-align: end;
     -moz-box-align: end;
     -ms-flex-align: end;
@@ -425,12 +411,12 @@ body {
     -webkit-flex: 1;
     flex: 1; }
 
-  .order-md-first {
+  .order-first-md {
     -ms-flex-order: -1;
     -webkit-order: -1;
     order: -1; }
 
-  .order-md-last {
+  .order-last-md {
     -webkit-box-ordinal-group: 1;
     -moz-box-ordinal-group: 1;
     -ms-flex-order: 1;
@@ -530,54 +516,54 @@ body {
   .offset-11-lg {
     margin-left: calc(91.66667% + (16px)); }
 
-  .lg-justify-flex-start {
+  .justify-flex-start-lg {
     -webkit-box-pack: start;
     -moz-box-pack: start;
     -ms-flex-pack: start;
     -webkit-justify-content: flex-start;
     justify-content: flex-start; }
 
-  .lg-justify-center {
+  .justify-center-lg {
     -webkit-box-pack: center;
     -moz-box-pack: center;
     -ms-flex-pack: center;
     -webkit-justify-content: center;
     justify-content: center; }
 
-  .lg-justify-flex-end {
+  .justify-flex-end-lg {
     -webkit-box-pack: end;
     -moz-box-pack: end;
     -ms-flex-pack: end;
     -webkit-justify-content: flex-end;
     justify-content: flex-end; }
 
-  .lg-justify-space-around {
+  .justify-space-around-lg {
     -ms-flex-pack: distribute;
     -webkit-justify-content: space-around;
     justify-content: space-around; }
 
-  .lg-justify-space-between {
+  .justify-space-between-lg {
     -webkit-box-pack: justify;
     -moz-box-pack: justify;
     -ms-flex-pack: justify;
     -webkit-justify-content: space-between;
     justify-content: space-between; }
 
-  .lg-align-flex-start {
+  .align-flex-start-lg {
     -webkit-box-align: start;
     -moz-box-align: start;
     -ms-flex-align: start;
     -webkit-align-items: flex-start;
     align-items: flex-start; }
 
-  .lg-align-center {
+  .align-center-lg {
     -webkit-box-align: center;
     -moz-box-align: center;
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center; }
 
-  .lg-align-flex-end {
+  .align-flex-end-lg {
     -webkit-box-align: end;
     -moz-box-align: end;
     -ms-flex-align: end;
@@ -591,12 +577,12 @@ body {
     -webkit-flex: 1;
     flex: 1; }
 
-  .order-lg-first {
+  .order-first-lg {
     -ms-flex-order: -1;
     -webkit-order: -1;
     order: -1; }
 
-  .order-lg-last {
+  .order-last-lg {
     -webkit-box-ordinal-group: 1;
     -moz-box-ordinal-group: 1;
     -ms-flex-order: 1;
@@ -696,54 +682,54 @@ body {
   .offset-11-xl {
     margin-left: calc(91.66667% + (16px)); }
 
-  .xl-justify-flex-start {
+  .justify-flex-start-xl {
     -webkit-box-pack: start;
     -moz-box-pack: start;
     -ms-flex-pack: start;
     -webkit-justify-content: flex-start;
     justify-content: flex-start; }
 
-  .xl-justify-center {
+  .justify-center-xl {
     -webkit-box-pack: center;
     -moz-box-pack: center;
     -ms-flex-pack: center;
     -webkit-justify-content: center;
     justify-content: center; }
 
-  .xl-justify-flex-end {
+  .justify-flex-end-xl {
     -webkit-box-pack: end;
     -moz-box-pack: end;
     -ms-flex-pack: end;
     -webkit-justify-content: flex-end;
     justify-content: flex-end; }
 
-  .xl-justify-space-around {
+  .justify-space-around-xl {
     -ms-flex-pack: distribute;
     -webkit-justify-content: space-around;
     justify-content: space-around; }
 
-  .xl-justify-space-between {
+  .justify-space-between-xl {
     -webkit-box-pack: justify;
     -moz-box-pack: justify;
     -ms-flex-pack: justify;
     -webkit-justify-content: space-between;
     justify-content: space-between; }
 
-  .xl-align-flex-start {
+  .align-flex-start-xl {
     -webkit-box-align: start;
     -moz-box-align: start;
     -ms-flex-align: start;
     -webkit-align-items: flex-start;
     align-items: flex-start; }
 
-  .xl-align-center {
+  .align-center-xl {
     -webkit-box-align: center;
     -moz-box-align: center;
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center; }
 
-  .xl-align-flex-end {
+  .align-flex-end-xl {
     -webkit-box-align: end;
     -moz-box-align: end;
     -ms-flex-align: end;
@@ -757,12 +743,12 @@ body {
     -webkit-flex: 1;
     flex: 1; }
 
-  .order-xl-first {
+  .order-first-xl {
     -ms-flex-order: -1;
     -webkit-order: -1;
     order: -1; }
 
-  .order-xl-last {
+  .order-last-xl {
     -webkit-box-ordinal-group: 1;
     -moz-box-ordinal-group: 1;
     -ms-flex-order: 1;
