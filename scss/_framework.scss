@@ -8,7 +8,7 @@ $render-classes: false !default;
 $wrap-grid-items: true !default;
 
 // Used to calculate viewport min-width for Media Queries
-$base-font-size: 16px;
+$grid-font-size: 16px;
 
 // Calculate viewport min-width for Media Queries
 
@@ -17,10 +17,10 @@ $width-md: 768px !default;
 $width-lg: 1024px !default;
 $width-xl: 1280px !default;
 
-$viewport-sm: $width-sm / $base-font-size !default;
-$viewport-md: $width-md / $base-font-size !default;
-$viewport-lg: $width-lg / $base-font-size !default;
-$viewport-xl: $width-xl / $base-font-size !default;
+$viewport-sm: $width-sm / $grid-font-size !default;
+$viewport-md: $width-md / $grid-font-size !default;
+$viewport-lg: $width-lg / $grid-font-size !default;
+$viewport-xl: $width-xl / $grid-font-size !default;
 
 // Grid Config
 $grid-columns : 12 !default; // Number of columns in grid
@@ -121,14 +121,6 @@ $align: flex-start center flex-end;
     }
 }
 
-* {
-    @include box-sizing(border-box);
-}
-
-// for Sticky Footer
-body {
-    margin: 0;
-    padding: 0;
 @mixin sticky-footer-push {
     display: flex;
     min-height: 100vh;
