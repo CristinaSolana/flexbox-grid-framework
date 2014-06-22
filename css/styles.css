@@ -90,6 +90,11 @@ body {
   -webkit-flex-basis: 0%;
   flex-basis: 0%; }
 
+.sticky-footer-push {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
+
 .column-1-sm {
   -ms-flex: 1;
   -webkit-flex-basis: calc(8.33333% - 16px);

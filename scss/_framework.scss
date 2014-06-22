@@ -129,10 +129,12 @@ $align: flex-start center flex-end;
 body {
     margin: 0;
     padding: 0;
+@mixin sticky-footer-push {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
 }
+
 
 @if( $render-classes ) {
     .grid-row {
@@ -184,6 +186,12 @@ body {
     .column-auto-xl {
         @include flex-grow(1);
         @include flex-basis(0%);
+    }
+
+    .sticky-footer-push {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
     }
 
     ////////////////////////
