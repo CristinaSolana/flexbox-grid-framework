@@ -12,7 +12,6 @@ $oldie-support: false !default;
 $grid-font-size: 16px;
 
 // Calculate viewport min-width for Media Queries
-
 $width-sm: 480px !default;
 $width-md: 768px !default;
 $width-lg: 1024px !default;
@@ -100,8 +99,8 @@ $align: flex-start center flex-end;
 }
 
 @mixin column-span($column-span) {
-    $total-col-width    : ($grid-width / $grid-columns) * $column-span;
-    $col-width          : calc(#{$total-col-width} - #{$grid-margin});
+    $total-col-width: ($grid-width / $grid-columns) * $column-span;
+    $col-width: calc(#{$total-col-width} - #{$grid-margin});
     $col-width-ie: $total-col-width - $grid-margin-ie;
 
     -ms-flex-preferred-size: $col-width-ie; // calc() doesn't work here. Using margin as percentage workaround for now. Boo IE. :(
@@ -121,7 +120,7 @@ $align: flex-start center flex-end;
 
 @mixin offset-span($offset-span) {
     $total-col-width    : ($grid-width / $grid-columns) * $offset-span;
-    $col-width          : calc(#{$total-col-width} + (#{$grid-margin}));
+    $col-width          : calc(#{$total-col-width} + #{$grid-margin});
 
     margin-left: $col-width;
 
@@ -149,7 +148,7 @@ $align: flex-start center flex-end;
 }
 
 
-@if( $render-classes ) {
+@if $render-classes == true {
     .grid-row {
         margin-right: -$grid-margin;
         @include display-flex();
