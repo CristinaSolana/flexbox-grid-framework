@@ -6,6 +6,7 @@
 ///////////////////////
 $render-classes: false !default;
 $wrap-grid-items: true !default;
+$oldie-support: false !default;
 
 // Used to calculate viewport min-width for Media Queries
 $grid-font-size: 16px;
@@ -26,6 +27,7 @@ $viewport-xl: $width-xl / $grid-font-size !default;
 $grid-columns : 12 !default; // Number of columns in grid
 $grid-width : 100% !default; // Percentage of container width
 $grid-margin : 16px !default; // Grid cell margin. Must have unit even if 0 or calc() poops.
+$grid-margin-ie : 0 !default;
 $grid-padding : 1rem !default;
 
 // Lists
@@ -100,13 +102,20 @@ $align: flex-start center flex-end;
 @mixin column-span($column-span) {
     $total-col-width    : ($grid-width / $grid-columns) * $column-span;
     $col-width          : calc(#{$total-col-width} - #{$grid-margin});
+    $col-width-ie: $total-col-width - $grid-margin-ie;
 
-    -ms-flex: $column-span;
-    //-ms-flex-preferred-size: $col-width; // calc() doesn't work here. Boo IE. :(
+    -ms-flex-preferred-size: $col-width-ie; // calc() doesn't work here. Using margin as percentage workaround for now. Boo IE. :(
     @include flex-basis($col-width);
 
     @if $render-classes == false {
         @include all-columns-offsets;
+    }
+
+    @if $oldie-support == true {
+        width: $col-width-ie;
+        margin: 0 0 $grid-margin-ie;
+        margin-right: $grid-margin-ie;
+        float: left;
     }
 }
 
@@ -118,6 +127,18 @@ $align: flex-start center flex-end;
 
     @if $render-classes == false {
         @include all-columns-offsets;
+    }
+}
+
+@if $oldie-support == true {
+    ul.grid-row {
+        // margin: 0;
+        // padding: 0;
+
+        [class^="column"] {
+            float: none !important;
+            display: inline-block !important;
+        }
     }
 }
 
@@ -136,6 +157,11 @@ $align: flex-start center flex-end;
         @if( $wrap-grid-items ) {
             @include flex-wrap(wrap);
         }
+
+        @if $oldie-support == true {
+            margin-right: -$flexgrid-margin-ie;
+            @include clearfix;
+        }
     }
     .grid-column {
         margin-left: -$grid-margin;
@@ -143,6 +169,10 @@ $align: flex-start center flex-end;
         @include flex-direction(column);
         @if( $wrap-grid-items ) {
             @include flex-wrap(wrap);
+        }
+
+        @if $oldie-support == true {
+            @include clearfix;
         }
     }
     @if( $wrap-grid-items == false ) {

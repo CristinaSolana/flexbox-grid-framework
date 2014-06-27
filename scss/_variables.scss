@@ -3,6 +3,7 @@
 ///////////////////////
 $render-classes: true;
 $wrap-grid-items: true;
+// $oldie-support: true;
 
 // Used to calculate viewport min-width for Media Queries
 $grid-font-size: 16px;
@@ -19,3 +20,4 @@ $grid-columns : 12; // Number of columns in grid
 $grid-width : 100%; // Percentage of container width
 $grid-margin : 16px; // Grid cell margin. Must have unit even if 0 or calc() poops.
 $grid-padding : 1rem;
+// $grid-margin-ie : 2%; // calc() doesn't work here. Using margin as percentage workaround for now.
