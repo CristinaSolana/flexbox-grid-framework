@@ -1,23 +1,22 @@
 ///////////////////////
 // Variables
 ///////////////////////
-$render-classes: true;
-$wrap-grid-items: true;
+// $render-classes: false;
+// $wrap-grid-items: false;
 // $oldie-support: true;
 
 // Used to calculate viewport min-width for Media Queries
-$grid-font-size: 16px;
+// $grid-font-size: 16px; // Pass your base font size to this variable
 
 // Calculate viewport min-width for Media Queries
-
-$width-sm: 480px;
-$width-md: 768px;
-$width-lg: 1024px;
-$width-xl: 1280px;
+// $width-sm: 480px;
+// $width-md: 768px;
+// $width-lg: 1024px;
+// $width-xl: 1280px;
 
 // Grid Config
-$grid-columns : 12; // Number of columns in grid
-$grid-width : 100%; // Percentage of container width
-$grid-margin : 16px; // Grid cell margin. Must have unit even if 0 or calc() poops.
-$grid-padding : 1rem;
+// $grid-columns : 12; // Number of columns in grid
+// $grid-width : 100%; // Percentage of container width
+// $grid-margin : 16px; // Grid cell margin. Must have unit even if 0 or calc() poops.
 // $grid-margin-ie : 2%; // calc() doesn't work here. Using margin as percentage workaround for now.
+// $grid-padding : 1rem;

@@ -4,7 +4,7 @@
 ///////////////////////
 // Variables
 ///////////////////////
-$render-classes: false !default;
+$render-classes: true !default;
 $wrap-grid-items: true !default;
 $oldie-support: false !default;
 
@@ -26,7 +26,7 @@ $viewport-xl: $width-xl / $grid-font-size !default;
 // Grid Config
 $grid-columns : 12 !default; // Number of columns in grid
 $grid-width : 100% !default; // Percentage of container width
-$grid-margin : 16px !default; // Grid cell margin. Must have unit even if 0 or calc() poops.
+$grid-margin : 0px !default;
 $grid-margin-ie : 0 !default;
 $grid-padding : 1rem !default;
 
