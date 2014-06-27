@@ -43,11 +43,11 @@ $align: flex-start center flex-end;
     @include flex-direction(column);
     @include flex-grow(0);
     @include flex-shrink(0);
-    margin-left: $grid-margin;
+    margin-right: $grid-margin;
 }
 
 @mixin grid-row {
-    margin-left: -$grid-margin;
+    margin-right: -$grid-margin;
     @include display-flex();
     @include flex-direction(row);
     @if( $wrap-grid-items ) {
@@ -55,7 +55,7 @@ $align: flex-start center flex-end;
     }
 }
 @mixin grid-column {
-    margin-left: -$grid-margin;
+    margin-right: -$grid-margin;
     @include display-flex();
     @include flex-direction(column);
     @if( $wrap-grid-items ) {
@@ -151,7 +151,7 @@ $align: flex-start center flex-end;
 
 @if( $render-classes ) {
     .grid-row {
-        margin-left: -$grid-margin;
+        margin-right: -$grid-margin;
         @include display-flex();
         @include flex-direction(row);
         @if( $wrap-grid-items ) {
@@ -164,7 +164,7 @@ $align: flex-start center flex-end;
         }
     }
     .grid-column {
-        margin-left: -$grid-margin;
+        margin-right: -$grid-margin;
         @include display-flex();
         @include flex-direction(column);
         @if( $wrap-grid-items ) {
@@ -199,7 +199,7 @@ $align: flex-start center flex-end;
         // @include flex-direction(column);
         // @include flex-grow(0);
         // @include flex-shrink(0);
-        margin-left: $grid-margin;
+        margin-right: $grid-margin;
     }
 
     .column-auto-sm,
