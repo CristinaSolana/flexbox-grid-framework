@@ -1,6 +1,8 @@
 @import "compass";
 @import "mixins-flexbox";
 
+$primary-color: #40dfcb;
+
 * {
 	@include box-sizing(border-box);
 }
@@ -17,7 +19,6 @@ header, footer, main, section, aside {
 h1 {
 	font-size: 1.5em;
 	margin: 0 0 1em;
-	color: #f06;
 }
 h2 {
 	font-size: 1.125em;
@@ -38,25 +39,27 @@ footer {
 	margin: 0 auto;
 }
 .example-content {
-	flex: 1;
+	@include flex(1);
 }
 .example-grid-wrapper {
 	margin-bottom: 2em;
 	padding: 1em;
-	background-color: #eee;
+	background-color: #f4f4f4;
 }
 footer {
 	padding: 1em;
 	background-color: black;
 }
 [class^="column"],
+[class^="media-column"],
 [class^="offset"] {
-	background-color: #ddd;
-	border: 1px solid #ccc;
+	background-color: $primary-color;
+	border: 1px solid #f4f4f4;
 	text-align: center;
 	font-family: monospace;
 	word-wrap: break-word; /* Oh Firefox */
 }
+
 [class^="grid"],
 [class^="grid"] + [class^="grid"] {
 	margin-bottom: 1rem;
