@@ -9,7 +9,7 @@ $wrap-grid-items: false !default;
 $oldie-support: false !default;
 
 // Used to calculate viewport min-width for Media Queries
-$grid-font-size: 16px;
+$fb-grid-font-size: 16px;
 
 // Calculate viewport min-width for Media Queries
 $width-sm: 480px !default;
@@ -17,10 +17,6 @@ $width-md: 768px !default;
 $width-lg: 1024px !default;
 $width-xl: 1280px !default;
 
-$viewport-sm: $width-sm / $grid-font-size !default;
-$viewport-md: $width-md / $grid-font-size !default;
-$viewport-lg: $width-lg / $grid-font-size !default;
-$viewport-xl: $width-xl / $grid-font-size !default;
 
 // Grid Config
 $grid-columns : 12 !default; // Number of columns in grid
@@ -28,6 +24,10 @@ $grid-width : 100% !default; // Percentage of container width
 $grid-margin : 0px !default;
 $grid-margin-ie : 0 !default;
 $grid-padding : 1rem !default;
+$viewport-sm: $width-sm / $fb-grid-font-size !default;
+$viewport-md: $width-md / $fb-grid-font-size !default;
+$viewport-lg: $width-lg / $fb-grid-font-size !default;
+$viewport-xl: $width-xl / $fb-grid-font-size !default;
 
 // Lists
 $justify: flex-start center flex-end space-around space-between;
