@@ -55,10 +55,20 @@ $align: flex-start center flex-end;
     @if( $wrap-grid-items ) {
         @include flex-wrap(wrap);
     }
+
+    @if $oldie-support == true {
+        margin-right: -$flexgrid-margin-ie;
+        @include clearfix;
+    }
 }
 @mixin grid-column {
     @include display-flex();
     @include flex-direction(column);
+
+    @if $oldie-support == true {
+        @include clearfix;
+    }
+}
     }
 }
 @mixin grid-wrap {
@@ -99,11 +109,10 @@ $align: flex-start center flex-end;
 }
 
 @mixin column-span($column-span) {
-    $col-width-ie: $total-col-width - $grid-margin-ie;
     $total-col-width: ($fb-grid-width / $fb-grid-columns) * $column-span;
     $col-width: $total-col-width;
 
-    -ms-flex-preferred-size: $col-width-ie; // calc() doesn't work here. Using margin as percentage workaround for now. Boo IE. :(
+    -ms-flex-preferred-size: $col-width;
     @include flex-basis($col-width);
 
     @if $render-classes == false {
@@ -112,8 +121,6 @@ $align: flex-start center flex-end;
 
     @if $oldie-support == true {
         width: $col-width-ie;
-        margin: 0 0 $grid-margin-ie;
-        margin-right: $grid-margin-ie;
         float: left;
     }
 }
