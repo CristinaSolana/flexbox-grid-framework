@@ -11,19 +11,23 @@ $oldie-support: false !default;
 // Used to calculate viewport min-width for Media Queries
 $fb-grid-font-size: 16px;
 
+// Grid Config
+$fb-grid-columns : 12 !default; // Number of columns in grid
+$fb-grid-width : 100% !default; // Percentage of container width
+$fb-grid-padding: 0 !default;
+
+// Media Grid Config
+$is-fb-media-grid: false !default;
+$fb-media-grid-columns : $fb-grid-columns !default; // Number of columns in grid
+$fb-grid-margin : 0px !default;
+$fb-grid-margin-ie : 0 !default;
+
 // Calculate viewport min-width for Media Queries
 $width-sm: 480px !default;
 $width-md: 768px !default;
 $width-lg: 1024px !default;
 $width-xl: 1280px !default;
 
-
-// Grid Config
-$grid-columns : 12 !default; // Number of columns in grid
-$grid-width : 100% !default; // Percentage of container width
-$grid-margin : 0px !default;
-$grid-margin-ie : 0 !default;
-$grid-padding : 1rem !default;
 $viewport-sm: $width-sm / $fb-grid-font-size !default;
 $viewport-md: $width-md / $fb-grid-font-size !default;
 $viewport-lg: $width-lg / $fb-grid-font-size !default;
@@ -47,6 +51,7 @@ $align: flex-start center flex-end;
 @mixin grid-row {
     @include display-flex();
     @include flex-direction(row);
+
     @if( $wrap-grid-items ) {
         @include flex-wrap(wrap);
     }
@@ -62,7 +67,7 @@ $align: flex-start center flex-end;
     @include flex-wrap(wrap);
 }
 @mixin grid-padding {
-    padding: $grid-padding;
+    padding: $fb-grid-padding;
 }
 
 @mixin row-reverse {
@@ -96,9 +101,9 @@ $align: flex-start center flex-end;
 }
 
 @mixin column-span($column-span) {
-    $total-col-width: ($grid-width / $grid-columns) * $column-span;
-    $col-width: calc(#{$total-col-width} - #{$grid-margin});
     $col-width-ie: $total-col-width - $grid-margin-ie;
+    $total-col-width: ($fb-grid-width / $fb-grid-columns) * $column-span;
+    $col-width: $total-col-width;
 
     -ms-flex-preferred-size: $col-width-ie; // calc() doesn't work here. Using margin as percentage workaround for now. Boo IE. :(
     @include flex-basis($col-width);
@@ -116,8 +121,8 @@ $align: flex-start center flex-end;
 }
 
 @mixin offset-span($offset-span) {
-    $total-col-width    : ($grid-width / $grid-columns) * $offset-span;
-    $col-width          : calc(#{$total-col-width} + #{$grid-margin});
+    $total-col-width    : ($fb-grid-width / $fb-grid-columns) * $offset-span;
+    $col-width          : calc(#{$total-col-width} + #{$fb-grid-margin});
 
     margin-left: $col-width;
 
