@@ -177,6 +177,7 @@ $align: flex-start center flex-end;
 }
 
 @mixin sticky-footer-push {
-    display: flex;
+    @include display-flex();
+    @include flex-direction(column);
     min-height: 100vh;
 }
