@@ -1,0 +1,236 @@
+@if $render-classes == true {
+	.grid-row {
+		@include grid-row;
+	}
+	.grid-column {
+		@include grid-column;
+	}
+	@if $is-fb-media-grid {
+		.media-grid-row {
+			@include media-grid-row;
+
+			> [class^="column"] {
+				margin-left: $fb-grid-margin;
+			}
+		}
+	}
+	@if $wrap-grid-items == false {
+		.grid-wrap {
+			@include flex-wrap(wrap);
+		}
+	}
+	.grid-padding {
+		padding: $fb-grid-padding;
+	}
+
+	.row-reverse {
+		@include flex-direction(row-reverse);
+		@include flex-wrap(row-reverse);
+	}
+	.column-reverse {
+		@include flex-direction(column-reverse);
+		@include flex-wrap(column-reverse);
+	}
+
+	[class^="offset"] {
+		margin-left: $fb-grid-margin;
+	}
+
+	.column-auto-sm,
+	.column-auto-md,
+	.column-auto-lg,
+	.column-auto-xl {
+		@include flex-grow(1);
+		@include flex-basis(0%);
+	}
+
+	.sticky-footer-push {
+		display: flex;
+		min-height: 100vh;
+		flex-direction: column;
+	}
+
+	////////////////////////
+	// Small
+	////////////////////////
+
+	@for $i from 1 through $fb-grid-columns {
+		.column-#{$i}-sm {
+			@include column-span($i);
+		}
+	}
+	@for $i from 1 through $fb-grid-columns - 1 {
+		.offset-#{$i}-sm {
+			@include offset-span($i);
+		}
+	}
+	@if $is-fb-media-grid {
+		@for $i from 1 through $fb-media-grid-columns {
+			.media-column-#{$i}-sm {
+				@include media-column-span($i);
+			}
+		}
+	}
+
+	@each $type in $justify {
+		.justify-#{$type}-sm {
+			@include justify-content($type);
+		}
+	}
+	@each $type in $align {
+		.align-#{$type}-sm {
+			@include align-items($type);
+		}
+	}
+
+	.column-auto-sm {
+		@include flex(1);
+	}
+	.order-first-sm {
+		@include order(-1);
+	}
+	.order-last-sm {
+		@include order(1);
+	}
+
+
+	////////////////////////
+	// Medium
+	////////////////////////
+
+	@media only screen and (min-width: $viewport-md + em) {
+
+		@for $i from 1 through $fb-grid-columns {
+			.column-#{$i}-md {
+				@include column-span($i);
+			}
+		}
+		@for $i from 1 through $fb-grid-columns - 1 {
+			.offset-#{$i}-md {
+				@include offset-span($i);
+			}
+		}
+		@if $is-fb-media-grid {
+			@for $i from 1 through $fb-media-grid-columns {
+				.media-column-#{$i}-md {
+					@include media-column-span($i);
+				}
+			}
+		}
+
+		@each $type in $justify {
+			.justify-#{$type}-md {
+				@include justify-content($type);
+			}
+		}
+		@each $type in $align {
+			.align-#{$type}-md {
+				@include align-items($type);
+			}
+		}
+
+		.column-auto-md {
+			@include flex(1);
+		}
+		.order-first-md {
+			@include order(-1);
+		}
+		.order-last-md {
+			@include order(1);
+		}
+
+	}
+
+	////////////////////////
+	// Large
+	////////////////////////
+
+	@media only screen and (min-width: $viewport-lg + em) {
+
+		@for $i from 1 through $fb-grid-columns {
+			.column-#{$i}-lg {
+				@include column-span($i);
+			}
+		}
+		@for $i from 1 through $fb-grid-columns - 1 {
+			.offset-#{$i}-lg {
+				@include offset-span($i);
+			}
+		}
+		@if $is-fb-media-grid {
+			@for $i from 1 through $fb-media-grid-columns {
+				.media-column-#{$i}-lg {
+					@include media-column-span($i);
+				}
+			}
+		}
+
+		@each $type in $justify {
+			.justify-#{$type}-lg {
+				@include justify-content($type);
+			}
+		}
+		@each $type in $align {
+			.align-#{$type}-lg {
+				@include align-items($type);
+			}
+		}
+
+		.column-auto-lg {
+			@include flex(1);
+		}
+		.order-first-lg {
+			@include order(-1);
+		}
+		.order-last-lg {
+			@include order(1);
+		}
+
+	}
+
+	////////////////////////
+	// X-Large
+	////////////////////////
+	@media only screen and (min-width: $viewport-xl + em) {
+
+		@for $i from 1 through $fb-grid-columns {
+			.column-#{$i}-xl {
+				@include column-span($i);
+			}
+		}
+		@for $i from 1 through $fb-grid-columns - 1 {
+			.offset-#{$i}-xl {
+				@include offset-span($i);
+			}
+		}
+		@if $is-fb-media-grid {
+			@for $i from 1 through $fb-media-grid-columns {
+				.media-column-#{$i}-xl {
+					@include media-column-span($i);
+				}
+			}
+		}
+
+		@each $type in $justify {
+			.justify-#{$type}-xl {
+				@include justify-content($type);
+			}
+		}
+		@each $type in $align {
+			.align-#{$type}-xl {
+				@include align-items($type);
+			}
+		}
+
+		.column-auto-xl {
+			@include flex(1);
+		}
+		.order-first-xl {
+			@include order(-1);
+		}
+		.order-last-xl {
+			@include order(1);
+		}
+
+	}
+}
