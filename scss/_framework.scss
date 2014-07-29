@@ -69,6 +69,15 @@ $align: flex-start center flex-end;
         @include clearfix;
     }
 }
+@mixin media-grid-row {
+    @include display-flex();
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    margin-left: -$fb-grid-margin;
+
+    @if $oldie-support == true {
+        margin-left: -$flexgrid-margin-ie;
+        @include clearfix;
     }
 }
 @mixin grid-wrap {
@@ -133,6 +142,28 @@ $align: flex-start center flex-end;
 
     @if $render-classes == false {
         @include all-columns-offsets;
+    }
+}
+
+@mixin media-column-span($column-span) {
+    $total-col-width: ($fb-grid-width / $fb-grid-columns) * $column-span;
+    $col-width: calc(#{$total-col-width} - #{$fb-grid-margin});
+    $col-width-ie: $total-col-width - $fb-grid-margin-ie;
+
+    -ms-flex-preferred-size: $col-width-ie; // calc() doesn't work here. Using margin as percentage workaround for now. Boo IE. :(
+    @include flex-basis($col-width);
+
+    @if $render-classes == false {
+        @include all-columns-offsets;
+    }
+
+    margin-left: $fb-grid-margin;
+
+    @if $oldie-support == true {
+        width: $col-width-ie;
+        margin: 0 0 $fb-grid-margin-ie;
+        margin-left: $fb-grid-margin-ie;
+        float: left;
     }
 }
 
