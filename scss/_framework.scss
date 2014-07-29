@@ -169,9 +169,6 @@ $align: flex-start center flex-end;
 
 @if $oldie-support == true {
     ul.grid-row {
-        // margin: 0;
-        // padding: 0;
-
         [class^="column"] {
             float: none !important;
             display: inline-block !important;
