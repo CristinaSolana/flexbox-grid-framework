@@ -39,8 +39,6 @@
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-left: -12px; }
-  .media-grid-row > [class^="column"] {
-    margin-left: 12px; }
 
 .grid-wrap {
   -webkit-box-lines: multiple;

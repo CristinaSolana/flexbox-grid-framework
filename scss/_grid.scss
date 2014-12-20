@@ -8,10 +8,6 @@
 	@if $is-fb-media-grid {
 		.media-grid-row {
 			@include media-grid-row;
-
-			> [class^="column"] {
-				margin-left: $fb-grid-margin;
-			}
 		}
 	}
 	@if $fb-grid-wrap-grid-items == false {
