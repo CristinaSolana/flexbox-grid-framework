@@ -1,11 +1,12 @@
 @import "compass";
 @import "mixins-flexbox";
+@import "variables";
 
 ///////////////////////
 // Variables
 ///////////////////////
 $fb-grid-render-classes: true !default;
-$fb-grid-wrap-grid-items: false !default;
+$fb-grid-wrap-grid-items: true !default;
 $fb-grid-oldie-support: false !default;
 
 // Used to calculate viewport min-width for Media Queries
