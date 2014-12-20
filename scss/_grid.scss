@@ -32,9 +32,9 @@
 		@include flex-wrap(column-reverse);
 	}
 
-	[class^="offset"] {
-		margin-left: $fb-grid-margin;
-	}
+	// [class^="offset"] {
+	// 	margin-left: $fb-grid-margin;
+	// }
 
 	.column-auto-sm,
 	.column-auto-md,

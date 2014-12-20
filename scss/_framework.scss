@@ -136,7 +136,7 @@ $align: flex-start center flex-end;
 
 @mixin offset-span($offset-span) {
     $total-col-width    : ($fb-grid-width / $fb-grid-columns) * $offset-span;
-    $col-width          : calc(#{$total-col-width} + #{$fb-grid-margin});
+    $col-width          : calc(#{$total-col-width});
 
     margin-left: $col-width;
 
