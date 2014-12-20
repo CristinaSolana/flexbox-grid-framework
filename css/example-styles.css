@@ -63,8 +63,9 @@ footer {
     background-color: #97eee3; }
 
 [class^="grid"],
-[class^="grid"] + [class^="grid"] {
-  margin-bottom: 1rem; }
+[class^="grid"] + [class^="grid"],
+[class^="media-column"] {
+  margin-bottom: 12px; }
 
 [class^="grid"] [class^="grid"] {
   margin-bottom: 0; }

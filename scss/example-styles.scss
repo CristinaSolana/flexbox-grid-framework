@@ -1,5 +1,4 @@
-@import "compass";
-@import "mixins-flexbox";
+@import "framework";
 
 $primary-color: #40dfcb;
 
@@ -59,13 +58,14 @@ footer {
 	word-wrap: break-word; /* Oh Firefox */
 
 	&:nth-child(odd) {
-		background-color: lighten($primary-color, 20);	
+		background-color: lighten($primary-color, 20);
 	}
 }
 
 [class^="grid"],
-[class^="grid"] + [class^="grid"] {
-	margin-bottom: 1rem;
+[class^="grid"] + [class^="grid"],
+[class^="media-column"] {
+	margin-bottom: $fb-grid-margin;
 }
 
 [class^="grid"] [class^="grid"] {
