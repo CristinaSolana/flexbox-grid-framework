@@ -15,14 +15,22 @@ body {
 header, footer, main, section, aside {
 	display: block;
 }
+h1, h3 {
+	margin: 0 0 1em;
+}
 h1 {
 	font-size: 1.5em;
-	margin: 0 0 1em;
 }
 h2 {
 	font-size: 1.125em;
 	margin: 2em 0 1em;
 	color: #666;
+}
+a {
+	padding: 0.25em 0.5em;
+	color: $primary-color;
+	text-decoration: none;
+	background-color: lighten($primary-color, 40);
 }
 li {
 	font-family: sans-serif;
@@ -37,16 +45,27 @@ footer {
 	max-width: 64em;
 	margin: 0 auto;
 }
-.example-content {
-	@include flex(1);
+
+.example-grid-wrapper,
+.example-sidebar,
+footer {
+	padding: 1em;
 }
 .example-grid-wrapper {
 	margin-bottom: 2em;
-	padding: 1em;
 	background-color: #f4f4f4;
 }
+.example-sidebar {
+	a {
+		display: block;
+	}
+
+	div {
+		margin-bottom: 2em;
+	}
+}
+
 footer {
-	padding: 1em;
 	background-color: black;
 }
 [class^="column"],
@@ -70,4 +89,13 @@ footer {
 
 [class^="grid"] [class^="grid"] {
 	margin-bottom: 0;
+}
+
+@media only screen and (min-width: $fb-grid-viewport-sm + em) {
+	.example-sidebar {
+		@include flex(1);
+	}
+	.example-content {
+		@include flex(4);
+	}
 }
