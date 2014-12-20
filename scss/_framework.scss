@@ -4,9 +4,9 @@
 ///////////////////////
 // Variables
 ///////////////////////
-$render-classes: true !default;
-$wrap-grid-items: false !default;
-$oldie-support: false !default;
+$fb-grid-render-classes: true !default;
+$fb-grid-wrap-grid-items: false !default;
+$fb-grid-oldie-support: false !default;
 
 // Used to calculate viewport min-width for Media Queries
 $fb-grid-font-size: 16px;
@@ -18,20 +18,20 @@ $fb-grid-padding: 0 !default;
 
 // Media Grid Config
 $is-fb-media-grid: false !default;
-$fb-media-grid-columns : $fb-grid-columns !default; // Number of columns in grid
-$fb-grid-margin : 0px !default;
-$fb-grid-margin-ie : 0 !default;
+$fb-media-grid-columns: $fb-grid-columns !default; // Number of columns per row in grid
+$fb-grid-margin: 0px !default;
+$fb-grid-margin-ie: 0 !default;
 
 // Calculate viewport min-width for Media Queries
-$width-sm: 480px !default;
-$width-md: 768px !default;
-$width-lg: 1024px !default;
-$width-xl: 1280px !default;
+$fb-grid-width-sm: 480px !default;
+$fb-grid-width-md: 768px !default;
+$fb-grid-width-lg: 1024px !default;
+$fb-grid-width-xl: 1280px !default;
 
-$viewport-sm: $width-sm / $fb-grid-font-size !default;
-$viewport-md: $width-md / $fb-grid-font-size !default;
-$viewport-lg: $width-lg / $fb-grid-font-size !default;
-$viewport-xl: $width-xl / $fb-grid-font-size !default;
+$fb-grid-viewport-sm: $fb-grid-width-sm / $fb-grid-font-size !default;
+$fb-grid-viewport-md: $fb-grid-width-md / $fb-grid-font-size !default;
+$fb-grid-viewport-lg: $fb-grid-width-lg / $fb-grid-font-size !default;
+$fb-grid-viewport-xl: $fb-grid-width-xl / $fb-grid-font-size !default;
 
 // Lists
 $justify: flex-start center flex-end space-around space-between;
@@ -52,11 +52,11 @@ $align: flex-start center flex-end;
     @include display-flex();
     @include flex-direction(row);
 
-    @if( $wrap-grid-items ) {
+    @if( $fb-grid-wrap-grid-items ) {
         @include flex-wrap(wrap);
     }
 
-    @if $oldie-support == true {
+    @if $fb-grid-oldie-support == true {
         margin-right: -$flexgrid-margin-ie;
         @include clearfix;
     }
@@ -65,7 +65,7 @@ $align: flex-start center flex-end;
     @include display-flex();
     @include flex-direction(column);
 
-    @if $oldie-support == true {
+    @if $fb-grid-oldie-support == true {
         @include clearfix;
     }
 }
@@ -75,7 +75,7 @@ $align: flex-start center flex-end;
     @include flex-wrap(wrap);
     margin-left: -$fb-grid-margin;
 
-    @if $oldie-support == true {
+    @if $fb-grid-oldie-support == true {
         margin-left: -$flexgrid-margin-ie;
         @include clearfix;
     }
@@ -124,11 +124,11 @@ $align: flex-start center flex-end;
     -ms-flex-preferred-size: $col-width;
     @include flex-basis($col-width);
 
-    @if $render-classes == false {
+    @if $fb-grid-render-classes == false {
         @include all-columns-offsets;
     }
 
-    @if $oldie-support == true {
+    @if $fb-grid-oldie-support == true {
         width: $col-width-ie;
         float: left;
     }
@@ -140,7 +140,7 @@ $align: flex-start center flex-end;
 
     margin-left: $col-width;
 
-    @if $render-classes == false {
+    @if $fb-grid-render-classes == false {
         @include all-columns-offsets;
     }
 }
@@ -153,13 +153,13 @@ $align: flex-start center flex-end;
     -ms-flex-preferred-size: $col-width-ie; // calc() doesn't work here. Using margin as percentage workaround for now. Boo IE. :(
     @include flex-basis($col-width);
 
-    @if $render-classes == false {
+    @if $fb-grid-render-classes == false {
         @include all-columns-offsets;
     }
 
     margin-left: $fb-grid-margin;
 
-    @if $oldie-support == true {
+    @if $fb-grid-oldie-support == true {
         width: $col-width-ie;
         margin: 0 0 $fb-grid-margin-ie;
         margin-left: $fb-grid-margin-ie;
@@ -167,7 +167,7 @@ $align: flex-start center flex-end;
     }
 }
 
-@if $oldie-support == true {
+@if $fb-grid-oldie-support == true {
     ul.grid-row {
         [class^="column"] {
             float: none !important;

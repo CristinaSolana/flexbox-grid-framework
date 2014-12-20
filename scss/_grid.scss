@@ -1,4 +1,4 @@
-@if $render-classes == true {
+@if $fb-grid-render-classes == true {
 	.grid-row {
 		@include grid-row;
 	}
@@ -14,7 +14,7 @@
 			}
 		}
 	}
-	@if $wrap-grid-items == false {
+	@if $fb-grid-wrap-grid-items == false {
 		.grid-wrap {
 			@include flex-wrap(wrap);
 		}
@@ -98,7 +98,7 @@
 	// Medium
 	////////////////////////
 
-	@media only screen and (min-width: $viewport-md + em) {
+	@media only screen and (min-width: $fb-grid-viewport-md + em) {
 
 		@for $i from 1 through $fb-grid-columns {
 			.column-#{$i}-md {
@@ -145,7 +145,7 @@
 	// Large
 	////////////////////////
 
-	@media only screen and (min-width: $viewport-lg + em) {
+	@media only screen and (min-width: $fb-grid-viewport-lg + em) {
 
 		@for $i from 1 through $fb-grid-columns {
 			.column-#{$i}-lg {
@@ -191,7 +191,7 @@
 	////////////////////////
 	// X-Large
 	////////////////////////
-	@media only screen and (min-width: $viewport-xl + em) {
+	@media only screen and (min-width: $fb-grid-viewport-xl + em) {
 
 		@for $i from 1 through $fb-grid-columns {
 			.column-#{$i}-xl {
