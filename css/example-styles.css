@@ -53,11 +53,14 @@ footer {
 [class^="media-column"],
 [class^="offset"] {
   background-color: #40dfcb;
-  border: 1px solid #f4f4f4;
   text-align: center;
   font-family: monospace;
   word-wrap: break-word;
   /* Oh Firefox */ }
+  [class^="column"]:nth-child(odd),
+  [class^="media-column"]:nth-child(odd),
+  [class^="offset"]:nth-child(odd) {
+    background-color: #97eee3; }
 
 [class^="grid"],
 [class^="grid"] + [class^="grid"] {
