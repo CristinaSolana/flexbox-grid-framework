@@ -88,9 +88,17 @@
   flex-basis: 0%; }
 
 .sticky-footer-push {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  min-height: 100vh;
-  flex-direction: column; }
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  min-height: 100vh; }
 
 .column-1-sm {
   -ms-flex-preferred-size: 8.33333%;

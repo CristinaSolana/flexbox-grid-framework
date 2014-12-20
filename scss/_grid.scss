@@ -12,25 +12,19 @@
 	}
 	@if $fb-grid-wrap-grid-items == false {
 		.grid-wrap {
-			@include flex-wrap(wrap);
+			@include grid-wrap();
 		}
 	}
 	.grid-padding {
-		padding: $fb-grid-padding;
+		@include grid-padding();
 	}
 
 	.row-reverse {
-		@include flex-direction(row-reverse);
-		@include flex-wrap(row-reverse);
+		@include row-reverse();
 	}
 	.column-reverse {
-		@include flex-direction(column-reverse);
-		@include flex-wrap(column-reverse);
+		@include column-reverse();
 	}
-
-	// [class^="offset"] {
-	// 	margin-left: $fb-grid-margin;
-	// }
 
 	.column-auto-sm,
 	.column-auto-md,
@@ -41,9 +35,7 @@
 	}
 
 	.sticky-footer-push {
-		display: flex;
-		min-height: 100vh;
-		flex-direction: column;
+		@include sticky-footer-push();
 	}
 
 	////////////////////////
