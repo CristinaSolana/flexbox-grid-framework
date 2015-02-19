@@ -177,8 +177,11 @@ $align: flex-start center flex-end;
     }
 }
 
-@mixin sticky-footer-push {
+@mixin sticky-footer-wrapper {
     @include display-flex();
     @include flex-direction(column);
     min-height: 100vh;
+}
+@mixin sticky-footer-content {
+    @include flex(1);
 }

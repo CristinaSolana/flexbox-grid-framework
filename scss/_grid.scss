@@ -34,8 +34,11 @@
 		@include flex-basis(0%);
 	}
 
-	.sticky-footer-push {
-		@include sticky-footer-push();
+	.sticky-footer-wrapper {
+		@include sticky-footer-wrapper();
+	}
+	.sticky-footer-content {
+		@include sticky-footer-content();
 	}
 
 	////////////////////////
