@@ -1,25 +1,26 @@
 ///////////////////////
 // Variables
 ///////////////////////
-// $render-classes: false;
-// $wrap-grid-items: false;
-// $oldie-support: true;
+// $fb-grid-render-classes: false;
+// $fb-grid-wrap-grid-items: false;
+// $fb-grid-oldie-support: true;
 
 // Used to calculate viewport min-width for Media Queries
-// $grid-font-size: 16px; // Pass your base font size to this variable
+// $fb-grid-font-size: 16px; // Pass your base font size to this variable
 
 // Grid Config
-// $grid-columns : 12; // Number of columns in grid
-// $grid-width : 100%; // Percentage of container width
-// $fb-grid-padding: 0 !default;
+// $fb-grid-columns: 12; // Number of columns in grid
+// $fb-grid-width: 100%; // Percentage of container width
+// $fb-grid-padding: 0;
 
 // Media Grid Config
 $is-fb-media-grid: true;
-$fb-grid-margin : 12px;
-$fb-grid-margin-ie : 0;
+// $fb-media-grid-columns: $fb-grid-columns; // Number of columns per row in grid, default: 12
+$fb-grid-margin: 12px;
+$fb-grid-margin-ie: 0;
 
 // Calculate viewport min-width for Media Queries
-// $width-sm: 480px;
-// $width-md: 768px;
-// $width-lg: 1024px;
-// $width-xl: 1280px;
+// $fb-grid-width-sm: 480px;
+// $fb-grid-width-md: 768px;
+// $fb-grid-width-lg: 1024px;
+// $fb-grid-width-xl: 1280px;

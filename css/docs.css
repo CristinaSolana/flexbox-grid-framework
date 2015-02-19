@@ -12,14 +12,22 @@ body {
 header, footer, main, section, aside {
   display: block; }
 
-h1 {
-  font-size: 1.5em;
+h1, h3 {
   margin: 0 0 1em; }
+
+h1 {
+  font-size: 1.5em; }
 
 h2 {
   font-size: 1.125em;
   margin: 2em 0 1em;
   color: #666; }
+
+a {
+  padding: 0.25em 0.5em;
+  color: #40dfcb;
+  text-decoration: none;
+  background-color: #effcfb; }
 
 li {
   font-family: sans-serif; }
@@ -33,35 +41,55 @@ footer {
   max-width: 64em;
   margin: 0 auto; }
 
-.example-content {
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  -ms-flex: 1;
-  -webkit-flex: 1;
-  flex: 1; }
+.example-grid-wrapper,
+.example-sidebar,
+footer {
+  padding: 1em; }
 
 .example-grid-wrapper {
   margin-bottom: 2em;
-  padding: 1em;
   background-color: #f4f4f4; }
 
+.example-sidebar a {
+  display: block; }
+.example-sidebar div {
+  margin-bottom: 2em; }
+
 footer {
-  padding: 1em;
   background-color: black; }
 
 [class^="column"],
 [class^="media-column"],
 [class^="offset"] {
   background-color: #40dfcb;
-  border: 1px solid #f4f4f4;
   text-align: center;
   font-family: monospace;
   word-wrap: break-word;
   /* Oh Firefox */ }
+  [class^="column"]:nth-child(odd),
+  [class^="media-column"]:nth-child(odd),
+  [class^="offset"]:nth-child(odd) {
+    background-color: #97eee3; }
 
 [class^="grid"],
-[class^="grid"] + [class^="grid"] {
-  margin-bottom: 1rem; }
+[class^="grid"] + [class^="grid"],
+[class^="media-column"] {
+  margin-bottom: 12px; }
 
 [class^="grid"] [class^="grid"] {
   margin-bottom: 0; }
+
+@media only screen and (min-width: 30em) {
+  .example-sidebar {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    -webkit-flex: 1;
+    flex: 1; }
+
+  .example-content {
+    -webkit-box-flex: 4;
+    -moz-box-flex: 4;
+    -ms-flex: 4;
+    -webkit-flex: 4;
+    flex: 4; } }

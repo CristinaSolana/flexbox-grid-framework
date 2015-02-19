@@ -7,463 +7,483 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Flexbox Grid Framework</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/example-styles.css">
+    <link rel="stylesheet" href="css/docs.css">
 
 </head>
 
-<body class="sticky-footer-push">
+<body class="sticky-footer-wrapper">
 
-    <div class="example-content">
+    <div class="grid-row wrapper sticky-footer-content">
 
-        <div class="example-grid-wrapper">
-            <h1>Basic Grids</h1>
-            <ul>
-                <li>Mixin: <code>@include column-&lt;# of columns&gt;</code>
-                <li>Class: <code>.column-&lt;# of columns&gt;-&lt;viewport size&gt;</code>
-            </ul>
-            <div class="grid-row">
-                <div class="column-1-sm">
-                    <p>.column-1-sm</p>
+        <nav class="example-sidebar">
+            <h3>Grid Layout</h3>
+            <div>
+                <a href="#basic-grid">Basic Grid</a>
+                <a href="#nested-grid">Nested Grid + Grid Padding</a>
+                <a href="#wrap-grid-items">Wrapping Grid Items</a>
+                <a href="#offset-grid">Offset Grid</a>
+            </div>
+            <h3>Ordering Grid Items</h3>
+            <div>
+                <a href="#rearrange-order">Rearrange</a>
+                <a href="#reverse-order">Reverse</a>
+            </div>
+            <h3>Grid Item Alignment</h3>
+            <div>
+                <a href="#vertical-grid-item-alignment">Vertical</a>
+                <a href="#horizontal-grid-item-alignment">Horizontal</a>
+            </div>
+            <h3>Misc</h3>
+            <div>
+                <a href="#media-grid">Media Grid</a>
+            </div>
+        </nav>
+
+        <div class="example-content">
+
+            <div id="basic-grid" class="example-grid-wrapper">
+                <h1>Basic Grids</h1>
+                <ul>
+                    <li>Mixin: <code>@include column-&lt;# of columns&gt;</code>
+                    <li>Class: <code>.column-&lt;# of columns&gt;-&lt;viewport size&gt;</code>
+                </ul>
+                <div class="grid-row">
+                    <div class="column-1-sm">
+                        <p>.column-1-sm</p>
+                    </div>
+                    <div class="column-11-sm">
+                        <p>.column-11-sm</p>
+                    </div>
                 </div>
-                <div class="column-11-sm">
-                    <p>.column-11-sm</p>
+
+                <div class="grid-row">
+                    <div class="column-2-sm">
+                        <p>.column-2-sm</p>
+                    </div>
+                    <div class="column-10-sm">
+                        <p>.column-10-sm</p>
+                    </div>
                 </div>
+
+                <div class="grid-row">
+                    <div class="column-3-sm">
+                        <p>.column-3-sm</p>
+                    </div>
+                    <div class="column-9-sm">
+                        <p>.column-9-sm</p>
+                    </div>
+                </div>
+
+                <div class="grid-row">
+                    <div class="column-4-sm">
+                        <p>.column-4-sm</p>
+                    </div>
+                    <div class="column-8-sm">
+                        <p>.column-8-sm</p>
+                    </div>
+                </div>
+
+                <div class="grid-row">
+                    <div class="column-5-sm">
+                        <p>.column-5-sm</p>
+                    </div>
+                    <div class="column-7-sm">
+                        <p>.column-7-sm</p>
+                    </div>
+                </div>
+
+                <div class="grid-row">
+                    <div class="column-12-sm column-6-md">
+                        <p>.column-12-sm</p>
+                        <p>.column-6-md</p>
+                    </div>
+                    <div class="column-12-sm column-6-md">
+                        <p>.column-12-sm</p>
+                        <p>.column-6-md</p>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="grid-row">
-                <div class="column-2-sm">
-                    <p>.column-2-sm</p>
-                </div>
-                <div class="column-10-sm">
-                    <p>.column-10-sm</p>
-                </div>
-            </div>
-
-            <div class="grid-row">
-                <div class="column-3-sm">
-                    <p>.column-3-sm</p>
-                </div>
-                <div class="column-9-sm">
-                    <p>.column-9-sm</p>
-                </div>
-            </div>
-
-            <div class="grid-row">
-                <div class="column-4-sm">
-                    <p>.column-4-sm</p>
-                </div>
-                <div class="column-8-sm">
-                    <p>.column-8-sm</p>
-                </div>
-            </div>
-
-            <div class="grid-row">
-                <div class="column-5-sm">
-                    <p>.column-5-sm</p>
-                </div>
-                <div class="column-7-sm">
-                    <p>.column-7-sm</p>
-                </div>
-            </div>
-
-            <div class="grid-row">
-                <div class="column-12-sm column-6-md">
-                    <p>.column-12-sm</p>
-                    <p>.column-6-md</p>
-                </div>
-                <div class="column-12-sm column-6-md">
-                    <p>.column-12-sm</p>
-                    <p>.column-6-md</p>
-                </div>
-            </div>
-            <div class="grid-row">
-                <div class="column-12-sm">
-                    <p>.column-12-sm</p>
-                    <p>Alternatively, when item is alone, can use: .column-auto-sm</p>
-                </div>
-            </div>
-
-            <div class="grid-row">
-                <div class="column-auto-sm">
-                    <p>.column-auto-sm</p>
-                </div>
-                <div class="column-auto-sm">
-                    <p>.column-auto-sm</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="example-grid-wrapper">
-            <h1>Nested Grid + Grid Padding</h1>
-            <ul>
-                <li>Mixin: <code>@include grid-padding</code>
-                <li>Class: <code>.grid-padding</code>
-            </ul>
-            <div class="grid-row">
-                <div class="column-6-sm">
-                    <div class="grid-row grid-padding">
-                        <div class="column-4-sm">
-                            <p>.column-4-sm</p>
+            <div id="nested-grid" class="example-grid-wrapper">
+                <h1>Nested Grid + Grid Padding</h1>
+                <ul>
+                    <li>Mixin: <code>@include grid-padding</code>
+                    <li>Class: <code>.grid-padding</code>
+                </ul>
+                <div class="grid-row">
+                    <div class="column-6-sm">
+                        <div class="grid-row grid-padding">
+                            <div class="column-4-sm">
+                                <p>.column-4-sm</p>
+                            </div>
+                            <div class="column-4-sm">
+                                <p>.column-4-sm</p>
+                            </div>
+                            <div class="column-4-sm">
+                                <p>.column-4-sm</p>
+                            </div>
                         </div>
-                        <div class="column-4-sm">
-                            <p>.column-4-sm</p>
-                        </div>
-                        <div class="column-4-sm">
-                            <p>.column-4-sm</p>
+                    </div>
+                    <div class="column-6-sm">
+                        <div class="grid-row grid-padding">
+                            <div class="column-3-sm">
+                                <p>.column-3-sm</p>
+                            </div>
+                            <div class="column-3-sm">
+                                <p>.column-3-sm</p>
+                            </div>
+                            <div class="column-3-sm">
+                                <p>.column-3-sm</p>
+                            </div>
+                            <div class="column-3-sm">
+                                <p>.column-3-sm</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="column-6-sm">
-                    <div class="grid-row grid-padding">
-                        <div class="column-6-sm">
-                            <p>.column-6-sm</p>
-                        </div>
-                        <div class="column-6-sm">
-                            <p>.column-6-sm</p>
-                        </div>
+            </div>
+
+            <div id="wrap-grid-items" class="example-grid-wrapper">
+                <h1>Wrap Grid Items</h1>
+                <ul>
+                    <li>Mixin: <code>@include grid-wrap</code>
+                    <li>Class: <code>.grid-wrap</code>
+                </ul>
+                <div class="grid-row grid-wrap">
+                    <div class="column-2-sm"><p>.column-2-sm</p></div>
+                    <div class="column-2-sm"><p>.column-2-sm</p></div>
+                    <div class="column-2-sm"><p>.column-2-sm</p></div>
+                    <div class="column-2-sm"><p>.column-2-sm</p></div>
+                    <div class="column-2-sm"><p>.column-2-sm</p></div>
+                    <div class="column-2-sm"><p>.column-2-sm</p></div>
+                    <div class="column-2-sm"><p>.column-2-sm</p></div>
+                    <div class="column-2-sm"><p>.column-2-sm</p></div>
+                    <div class="column-2-sm"><p>.column-2-sm</p></div>
+                    <div class="column-2-sm"><p>.column-2-sm</p></div>
+                    <div class="column-2-sm"><p>.column-2-sm</p></div>
+                    <div class="column-2-sm"><p>.column-2-sm</p></div>
+                </div>
+            </div>
+
+            <div id="offset-grid" class="example-grid-wrapper">
+                <h1>Offsets</h1>
+                <ul>
+                    <li>Mixin: <code>@include offset-&lt;# of columns&gt;</code>
+                    <li>Class: <code>.offset-&lt;# of columns&gt;-&lt;viewport size&gt;</code>
+                </ul>
+                <div class="grid-row">
+                    <div class="column-1-sm"><p>.column-1-sm</p></div>
+                </div>
+                <div class="grid-row">
+                    <div class="column-1-sm offset-1-sm"><p>.offset-1-sm</p></div>
+                </div>
+                <div class="grid-row">
+                    <div class="column-1-sm offset-2-sm"><p>.offset-2-sm</p></div>
+                </div>
+                <div class="grid-row">
+                    <div class="column-1-sm offset-3-sm"><p>.offset-3-sm</p></div>
+                </div>
+                <div class="grid-row">
+                    <div class="column-1-sm offset-4-sm"><p>.offset-4-sm</p></div>
+                </div>
+                <div class="grid-row">
+                    <div class="column-1-sm offset-5-sm"><p>.offset-5-sm</p></div>
+                </div>
+                <div class="grid-row">
+                    <div class="column-1-sm offset-6-sm"><p>.offset-6-sm</p></div>
+                </div>
+                <div class="grid-row">
+                    <div class="column-1-sm offset-7-sm"><p>.offset-7-sm</p></div>
+                </div>
+                <div class="grid-row">
+                    <div class="column-1-sm offset-8-sm"><p>.offset-8-sm</p></div>
+                </div>
+                <div class="grid-row">
+                    <div class="column-1-sm offset-9-sm"><p>.offset-9-sm</p></div>
+                </div>
+                <div class="grid-row">
+                    <div class="column-1-sm offset-10-sm"><p>.offset-10-sm</p></div>
+                </div>
+                <div class="grid-row">
+                    <div class="column-1-sm offset-11-sm"><p>.offset-11-sm</p></div>
+                </div>
+            </div>
+
+            <div id="rearrange-order" class="example-grid-wrapper">
+                <h1>Rearranging Item Order</h1>
+                <ul>
+                    <li>Mixin: <code>@include order-first-sm</code>
+                    <li>Class: <code>.order-first-sm</code>
+                </ul>
+                <div class="grid-row">
+                    <div class="column-9-sm">
+                        <p>.column-9-sm</p>
+                    </div>
+                    <div class="column-3-sm order-first-lg">
+                        <p>.column-9-sm .order-first-lg</p>
+                    </div>
+                </div>
+                <ul>
+                    <li>Mixin: <code>@include order-last-sm</code>
+                    <li>Class: <code>.order-last-sm</code>
+                </ul>
+                <div class="grid-row">
+                    <div class="column-9-sm order-last-sm">
+                        <p>.column-9-sm .order-last-sm</p>
+                    </div>
+                    <div class="column-3-sm order-last-lg">
+                        <p>.column-9-sm .order-last-lg</p>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="example-grid-wrapper">
-            <h1>Wrapping Grids</h1>
-            <ul>
-                <li>Mixin: <code>@include grid-wrap</code>
-                <li>Class: <code>.grid-wrap</code>
-            </ul>
-            <div class="grid-row grid-wrap">
-                <div class="column-2-sm"><p>.column-2-sm</p></div>
-                <div class="column-2-sm"><p>.column-2-sm</p></div>
-                <div class="column-2-sm"><p>.column-2-sm</p></div>
-                <div class="column-2-sm"><p>.column-2-sm</p></div>
-                <div class="column-2-sm"><p>.column-2-sm</p></div>
-                <div class="column-2-sm"><p>.column-2-sm</p></div>
-                <div class="column-2-sm"><p>.column-2-sm</p></div>
-                <div class="column-2-sm"><p>.column-2-sm</p></div>
-                <div class="column-2-sm"><p>.column-2-sm</p></div>
-                <div class="column-2-sm"><p>.column-2-sm</p></div>
-                <div class="column-2-sm"><p>.column-2-sm</p></div>
-                <div class="column-2-sm"><p>.column-2-sm</p></div>
-            </div>
-        </div>
+            <div id="reverse-order" class="example-grid-wrapper">
+                <h1>Reversing Order</h1>
 
-        <div class="example-grid-wrapper">
-            <h1>Rearranging Item Order</h1>
-            <ul>
-                <li>Mixin: <code>@include order-first-sm</code>
-                <li>Class: <code>.order-first-sm</code>
-            </ul>
-            <div class="grid-row">
-                <div class="column-9-sm">
-                    <p>.column-9-sm</p>
+                <h2>Horizontal</h2>
+                <ul>
+                    <li>Mixin: <code>@include row-reverse</code>
+                    <li>Class: <code>.row-reverse</code>
+                </ul>
+                <div class="grid-row row-reverse">
+                    <div class="column-4-sm">
+                        <h2>1</h2>
+                        <p>.column-4-sm</p>
+                    </div>
+                    <div class="column-4-sm">
+                        <h2>2</h2>
+                        <p>.column-4-sm</p>
+                    </div>
+                    <div class="column-4-sm">
+                        <h2>3</h2>
+                        <p>.column-4-sm</p>
+                    </div>
                 </div>
-                <div class="column-3-sm order-first-lg">
-                    <p>.column-9-sm .order-first-lg</p>
-                </div>
-            </div>
-            <ul>
-                <li>Mixin: <code>@include order-last-sm</code>
-                <li>Class: <code>.order-last-sm</code>
-            </ul>
-            <div class="grid-row">
-                <div class="column-9-sm order-last-sm">
-                    <p>.column-9-sm .order-last-sm</p>
-                </div>
-                <div class="column-3-sm order-last-lg">
-                    <p>.column-9-sm .order-last-lg</p>
-                </div>
-            </div>
-        </div>
 
-        <div class="example-grid-wrapper">
-            <h1>Reversing Order</h1>
-
-            <h2>Horizontal</h2>
-            <ul>
-                <li>Mixin: <code>@include row-reverse</code>
-                <li>Class: <code>.row-reverse</code>
-            </ul>
-            <div class="grid-row row-reverse">
-                <div class="column-4-sm">
-                    <h2>1</h2>
-                    <p>.column-4-sm</p>
-                </div>
-                <div class="column-4-sm">
-                    <h2>2</h2>
-                    <p>.column-4-sm</p>
-                </div>
-                <div class="column-4-sm">
-                    <h2>3</h2>
-                    <p>.column-4-sm</p>
+                <h2>Vertical</h2>
+                <ul>
+                    <li>Mixin: <code>@include column-reverse</code>
+                    <li>Class: <code>.column-reverse</code>
+                </ul>
+                <div class="grid-column column-reverse">
+                    <div class="column-auto-sm">
+                        <h2>1</h2>
+                        <p>.column-auto-sm</p>
+                    </div>
+                    <div class="column-auto-sm">
+                        <h2>2</h2>
+                        <p>.column-auto-sm</p>
+                    </div>
                 </div>
             </div>
 
-            <h2>Vertical</h2>
-            <ul>
-                <li>Mixin: <code>@include column-reverse</code>
-                <li>Class: <code>.column-reverse</code>
-            </ul>
-            <div class="grid-column column-reverse">
-                <div class="column-auto-sm">
-                    <h2>1</h2>
-                    <p>.column-auto-sm</p>
-                </div>
-                <div class="column-auto-sm">
-                    <h2>2</h2>
-                    <p>.column-auto-sm</p>
-                </div>
-            </div>
-        </div>
+            <div id="vertical-grid-item-alignment" class="example-grid-wrapper">
+                <h1>Vertical Item Alignment</h1>
 
-        <div class="example-grid-wrapper">
-            <h1>Vertical Item Alignment</h1>
+                <h2>Align columns to 'top'</h2>
+                <ul>
+                    <li>Mixin: <code>@include align($type)</code>
+                    <li>Class: <code>.&lt;viewport size&gt;-align-flex-start</code>
+                </ul>
+                <div class="grid-row align-flex-start-sm">
+                    <div class="column-4-sm">
+                        <p>.column-4-sm</p>
+                    </div>
+                    <div class="column-4-sm">
+                        <p>...</p>
+                        <p>.column-4-sm</p>
+                    </div>
+                    <div class="column-4-sm">
+                        <p>...</p>
+                        <p>.column-4-sm</p>
+                        <p>...</p>
+                    </div>
+                </div>
 
-            <h2>Align columns to 'top'</h2>
-            <ul>
-                <li>Mixin: <code>@include align($type)</code>
-                <li>Class: <code>.&lt;viewport size&gt;-align-flex-start</code>
-            </ul>
-            <div class="grid-row align-flex-start-sm">
-                <div class="column-4-sm">
-                    <p>.column-4-sm</p>
+                <h2>Align columns to center</h2>
+                <ul>
+                    <li>Mixin: <code>@include align($type)</code>
+                    <li>Class: <code>.&lt;viewport size&gt;-align-center</code>
+                </ul>
+                <div class="grid-row align-center-sm">
+                    <div class="column-4-sm">
+                        <p>.column-4-sm</p>
+                    </div>
+                    <div class="column-4-sm">
+                        <p>...</p>
+                        <p>.column-4-sm</p>
+                    </div>
+                    <div class="column-4-sm">
+                        <p>...</p>
+                        <p>.column-4-sm</p>
+                        <p>...</p>
+                    </div>
                 </div>
-                <div class="column-4-sm">
-                    <p>...</p>
-                    <p>.column-4-sm</p>
-                </div>
-                <div class="column-4-sm">
-                    <p>...</p>
-                    <p>.column-4-sm</p>
-                    <p>...</p>
-                </div>
-            </div>
 
-            <h2>Align columns to center</h2>
-            <ul>
-                <li>Mixin: <code>@include align($type)</code>
-                <li>Class: <code>.&lt;viewport size&gt;-align-center</code>
-            </ul>
-            <div class="grid-row align-center-sm">
-                <div class="column-4-sm">
-                    <p>.column-4-sm</p>
-                </div>
-                <div class="column-4-sm">
-                    <p>...</p>
-                    <p>.column-4-sm</p>
-                </div>
-                <div class="column-4-sm">
-                    <p>...</p>
-                    <p>.column-4-sm</p>
-                    <p>...</p>
-                </div>
-            </div>
-
-            <h2>Align columns to bottom</h2>
-            <ul>
-                <li>Mixin: <code>@include align($type)</code>
-                <li>Class: <code>.&lt;viewport size&gt;-align-flex-end</code>
-            </ul>
-            <div class="grid-row align-flex-end-sm">
-                <div class="column-4-sm">
-                    <p>.column-4-sm</p>
-                </div>
-                <div class="column-4-sm">
-                    <p>...</p>
-                    <p>.column-4-sm</p>
-                </div>
-                <div class="column-4-sm">
-                    <p>...</p>
-                    <p>.column-4-sm</p>
-                    <p>...</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="example-grid-wrapper">
-            <h1>Horizontal Alignment</h1>
-
-            <h2>Align columns to start</h2>
-            <ul>
-                <li>Mixin: <code>@include justify($type)</code>
-                <li>Class: <code>.&lt;viewport size&gt;-justify-flex-start</code>
-            </ul>
-            <div class="grid-row">
-                <div class="column-4-sm justify-flex-start-sm">
-                    <p>.column-4-sm</p>
+                <h2>Align columns to bottom</h2>
+                <ul>
+                    <li>Mixin: <code>@include align($type)</code>
+                    <li>Class: <code>.&lt;viewport size&gt;-align-flex-end</code>
+                </ul>
+                <div class="grid-row align-flex-end-sm">
+                    <div class="column-4-sm">
+                        <p>.column-4-sm</p>
+                    </div>
+                    <div class="column-4-sm">
+                        <p>...</p>
+                        <p>.column-4-sm</p>
+                    </div>
+                    <div class="column-4-sm">
+                        <p>...</p>
+                        <p>.column-4-sm</p>
+                        <p>...</p>
+                    </div>
                 </div>
             </div>
 
-            <h2>Align columns to center</h2>
-            <ul>
-                <li>Mixin: <code>@include justify($type)</code>
-                <li>Class: <code>.&lt;viewport size&gt;-justify-center</code>
-            </ul>
-            <div class="grid-row justify-center-sm">
-                <div class="column-4-sm">
-                    <p>.column-4-sm</p>
+            <div id="horizontal-grid-item-alignment" class="example-grid-wrapper">
+                <h1>Horizontal Alignment</h1>
+
+                <h2>Align columns to start</h2>
+                <ul>
+                    <li>Mixin: <code>@include justify($type)</code>
+                    <li>Class: <code>.&lt;viewport size&gt;-justify-flex-start</code>
+                </ul>
+                <div class="grid-row">
+                    <div class="column-4-sm justify-flex-start-sm">
+                        <p>.column-4-sm</p>
+                    </div>
+                </div>
+
+                <h2>Align columns to center</h2>
+                <ul>
+                    <li>Mixin: <code>@include justify($type)</code>
+                    <li>Class: <code>.&lt;viewport size&gt;-justify-center</code>
+                </ul>
+                <div class="grid-row justify-center-sm">
+                    <div class="column-4-sm">
+                        <p>.column-4-sm</p>
+                    </div>
+                </div>
+
+                <h2>Align columns to end</h2>
+                <ul>
+                    <li>Mixin: <code>@include justify($type)</code>
+                    <li>Class: <code>.&lt;viewport size&gt;-justify-flex-end</code>
+                </ul>
+                <div class="grid-row justify-flex-end-sm">
+                    <div class="column-4-sm">
+                        <p>.column-4-sm</p>
+                    </div>
+                </div>
+
+                <h2>Add equal gutter around columns</h2>
+                <ul>
+                    <li>Mixin: <code>@include justify($type)</code>
+                    <li>Class: <code>.&lt;viewport size&gt;-justify-space-around</code>
+                </ul>
+                <div class="grid-row justify-space-around-sm">
+                    <div class="column-4-sm">
+                        <p>.column-4-sm</p>
+                    </div>
+                    <div class="column-4-sm">
+                        <p>.column-4-sm</p>
+                    </div>
+                    <div class="column-4-sm">
+                        <p>.column-4-sm</p>
+                    </div>
+                </div>
+
+                <h2>Add equal gutter between columns</h2>
+                <ul>
+                    <li>Mixin: <code>@include justify($type)</code>
+                    <li>Class: <code>.&lt;viewport size&gt;-justify-space-between</code>
+                </ul>
+                <div class="grid-row justify-space-between-sm">
+                    <div class="column-4-sm">
+                        <p>.column-4-sm</p>
+                    </div>
+                    <div class="column-4-sm">
+                        <p>.column-4-sm</p>
+                    </div>
+                    <div class="column-4-sm">
+                        <p>.column-4-sm</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="media-grid" class="example-grid-wrapper">
+                <h1>Media Grids</h1>
+                <ul>
+                    <li>Mixin: <code>@include column-&lt;# of columns&gt;</code>
+                    <li>Class: <code>.column-&lt;# of columns&gt;-&lt;viewport size&gt;</code>
+                </ul>
+                <div class="media-grid-row">
+                    <div class="media-column-2-sm media-column-3-lg media-column-4-xl">
+                        <p>.media-column-2-sm</p>
+                        <p>.media-column-3-lg</p>
+                        <p>.media-column-4-xl</p>
+                    </div>
+                    <div class="media-column-2-sm media-column-3-lg media-column-4-xl">
+                        <p>.media-column-2-sm</p>
+                        <p>.media-column-3-lg</p>
+                        <p>.media-column-4-xl</p>
+                    </div>
+                    <div class="media-column-2-sm media-column-3-lg media-column-4-xl">
+                        <p>.media-column-2-sm</p>
+                        <p>.media-column-3-lg</p>
+                        <p>.media-column-4-xl</p>
+                    </div>
+                    <div class="media-column-2-sm media-column-3-lg media-column-4-xl">
+                        <p>.media-column-2-sm</p>
+                        <p>.media-column-3-lg</p>
+                        <p>.media-column-4-xl</p>
+                    </div>
+                    <div class="media-column-2-sm media-column-3-lg media-column-4-xl">
+                        <p>.media-column-2-sm</p>
+                        <p>.media-column-3-lg</p>
+                        <p>.media-column-4-xl</p>
+                    </div>
+                    <div class="media-column-2-sm media-column-3-lg media-column-4-xl">
+                        <p>.media-column-2-sm</p>
+                        <p>.media-column-3-lg</p>
+                        <p>.media-column-4-xl</p>
+                    </div>
+                    <div class="media-column-2-sm media-column-3-lg media-column-4-xl">
+                        <p>.media-column-2-sm</p>
+                        <p>.media-column-3-lg</p>
+                        <p>.media-column-4-xl</p>
+                    </div>
+                    <div class="media-column-2-sm media-column-3-lg media-column-4-xl">
+                        <p>.media-column-2-sm</p>
+                        <p>.media-column-3-lg</p>
+                        <p>.media-column-4-xl</p>
+                    </div>
+                    <div class="media-column-2-sm media-column-3-lg media-column-4-xl">
+                        <p>.media-column-2-sm</p>
+                        <p>.media-column-3-lg</p>
+                        <p>.media-column-4-xl</p>
+                    </div>
+                    <div class="media-column-2-sm media-column-3-lg media-column-4-xl">
+                        <p>.media-column-2-sm</p>
+                        <p>.media-column-3-lg</p>
+                        <p>.media-column-4-xl</p>
+                    </div>
+                    <div class="media-column-2-sm media-column-3-lg media-column-4-xl">
+                        <p>.media-column-2-sm</p>
+                        <p>.media-column-3-lg</p>
+                        <p>.media-column-4-xl</p>
+                    </div>
+                    <div class="media-column-2-sm media-column-3-lg media-column-4-xl">
+                        <p>.media-column-2-sm</p>
+                        <p>.media-column-3-lg</p>
+                        <p>.media-column-4-xl</p>
+                    </div>
                 </div>
             </div>
 
-            <h2>Align columns to end</h2>
-            <ul>
-                <li>Mixin: <code>@include justify($type)</code>
-                <li>Class: <code>.&lt;viewport size&gt;-justify-flex-end</code>
-            </ul>
-            <div class="grid-row justify-flex-end-sm">
-                <div class="column-4-sm">
-                    <p>.column-4-sm</p>
-                </div>
-            </div>
-
-            <h2>Add equal gutter around columns</h2>
-            <ul>
-                <li>Mixin: <code>@include justify($type)</code>
-                <li>Class: <code>.&lt;viewport size&gt;-justify-space-around</code>
-            </ul>
-            <div class="grid-row justify-space-around-sm">
-                <div class="column-4-sm">
-                    <p>.column-4-sm</p>
-                </div>
-                <div class="column-4-sm">
-                    <p>.column-4-sm</p>
-                </div>
-                <div class="column-4-sm">
-                    <p>.column-4-sm</p>
-                </div>
-            </div>
-
-            <h2>Add equal gutter between columns</h2>
-            <ul>
-                <li>Mixin: <code>@include justify($type)</code>
-                <li>Class: <code>.&lt;viewport size&gt;-justify-space-between</code>
-            </ul>
-            <div class="grid-row justify-space-between-sm">
-                <div class="column-4-sm">
-                    <p>.column-4-sm</p>
-                </div>
-                <div class="column-4-sm">
-                    <p>.column-4-sm</p>
-                </div>
-                <div class="column-4-sm">
-                    <p>.column-4-sm</p>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="example-grid-wrapper">
-            <h1>Offsets</h1>
-            <ul>
-                <li>Mixin: <code>@include offset-&lt;# of columns&gt;</code>
-                <li>Class: <code>.offset-&lt;# of columns&gt;-&lt;viewport size&gt;</code>
-            </ul>
-            <div class="grid-row">
-                <div class="column-1-sm"><p>.column-1-sm</p></div>
-            </div>
-            <div class="grid-row">
-                <div class="column-1-sm offset-1-sm"><p>.offset-1-sm</p></div>
-            </div>
-            <div class="grid-row">
-                <div class="column-1-sm offset-2-sm"><p>.offset-2-sm</p></div>
-            </div>
-            <div class="grid-row">
-                <div class="column-1-sm offset-3-sm"><p>.offset-3-sm</p></div>
-            </div>
-            <div class="grid-row">
-                <div class="column-1-sm offset-4-sm"><p>.offset-4-sm</p></div>
-            </div>
-            <div class="grid-row">
-                <div class="column-1-sm offset-5-sm"><p>.offset-5-sm</p></div>
-            </div>
-            <div class="grid-row">
-                <div class="column-1-sm offset-6-sm"><p>.offset-6-sm</p></div>
-            </div>
-            <div class="grid-row">
-                <div class="column-1-sm offset-7-sm"><p>.offset-7-sm</p></div>
-            </div>
-            <div class="grid-row">
-                <div class="column-1-sm offset-8-sm"><p>.offset-8-sm</p></div>
-            </div>
-            <div class="grid-row">
-                <div class="column-1-sm offset-9-sm"><p>.offset-9-sm</p></div>
-            </div>
-            <div class="grid-row">
-                <div class="column-1-sm offset-10-sm"><p>.offset-10-sm</p></div>
-            </div>
-            <div class="grid-row">
-                <div class="column-1-sm offset-11-sm"><p>.offset-11-sm</p></div>
-            </div>
-        </div>
-
-        <div class="example-grid-wrapper">
-            <h1>Media Grids</h1>
-            <ul>
-                <li>Mixin: <code>@include column-&lt;# of columns&gt;</code>
-                <li>Class: <code>.column-&lt;# of columns&gt;-&lt;viewport size&gt;</code>
-            </ul>
-            <div class="media-grid-row">
-                <div class="media-column-2-sm media-column-3-lg media-column-4-xl">
-                    <p>.media-column-2-sm</p>
-                    <p>.media-column-3-lg</p>
-                    <p>.media-column-4-xl</p>
-                </div>
-                <div class="media-column-2-sm media-column-3-lg media-column-4-xl">
-                    <p>.media-column-2-sm</p>
-                    <p>.media-column-3-lg</p>
-                    <p>.media-column-4-xl</p>
-                </div>
-                <div class="media-column-2-sm media-column-3-lg media-column-4-xl">
-                    <p>.media-column-2-sm</p>
-                    <p>.media-column-3-lg</p>
-                    <p>.media-column-4-xl</p>
-                </div>
-                <div class="media-column-2-sm media-column-3-lg media-column-4-xl">
-                    <p>.media-column-2-sm</p>
-                    <p>.media-column-3-lg</p>
-                    <p>.media-column-4-xl</p>
-                </div>
-                <div class="media-column-2-sm media-column-3-lg media-column-4-xl">
-                    <p>.media-column-2-sm</p>
-                    <p>.media-column-3-lg</p>
-                    <p>.media-column-4-xl</p>
-                </div>
-                <div class="media-column-2-sm media-column-3-lg media-column-4-xl">
-                    <p>.media-column-2-sm</p>
-                    <p>.media-column-3-lg</p>
-                    <p>.media-column-4-xl</p>
-                </div>
-                <div class="media-column-2-sm media-column-3-lg media-column-4-xl">
-                    <p>.media-column-2-sm</p>
-                    <p>.media-column-3-lg</p>
-                    <p>.media-column-4-xl</p>
-                </div>
-                <div class="media-column-2-sm media-column-3-lg media-column-4-xl">
-                    <p>.media-column-2-sm</p>
-                    <p>.media-column-3-lg</p>
-                    <p>.media-column-4-xl</p>
-                </div>
-                <div class="media-column-2-sm media-column-3-lg media-column-4-xl">
-                    <p>.media-column-2-sm</p>
-                    <p>.media-column-3-lg</p>
-                    <p>.media-column-4-xl</p>
-                </div>
-                <div class="media-column-2-sm media-column-3-lg media-column-4-xl">
-                    <p>.media-column-2-sm</p>
-                    <p>.media-column-3-lg</p>
-                    <p>.media-column-4-xl</p>
-                </div>
-                <div class="media-column-2-sm media-column-3-lg media-column-4-xl">
-                    <p>.media-column-2-sm</p>
-                    <p>.media-column-3-lg</p>
-                    <p>.media-column-4-xl</p>
-                </div>
-                <div class="media-column-2-sm media-column-3-lg media-column-4-xl">
-                    <p>.media-column-2-sm</p>
-                    <p>.media-column-3-lg</p>
-                    <p>.media-column-4-xl</p>
-                </div>
-            </div>
         </div>
 
     </div>
